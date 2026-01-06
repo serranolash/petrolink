@@ -205,7 +205,7 @@ export default function Contacto() {
                   </div>
                   <div>
                     <div className="font-bold">Consultas Generales</div>
-                    <div className="text-amber-300">talento@petrolinkvzla.com</div>
+                    <div className="text-amber-300">marielvismalave@petrolinkvzla.com</div>
                   </div>
                 </div>
                 
