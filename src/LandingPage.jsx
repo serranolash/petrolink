@@ -802,7 +802,7 @@ export default function LandingPageExecutive() {
             <div>
               <h4 className="text-white font-semibold mb-6">Contacto</h4>
               <ul className="space-y-3">
-                <li className="flex items-center gap-2"><Mail size={16} /> talento@petrolinkvzla.com</li>
+                <li className="flex items-center gap-2"><Mail size={16} /> marielvismalave@petrolinkvzla.com</li>
                 <li className="flex items-center gap-2"><Phone size={16} /> +58 412-PETROLINK</li>
                 <li className="flex items-center gap-2"><MapPin size={16} /> Caracas • Maracaibo • Punto Fijo</li>
               </ul>
