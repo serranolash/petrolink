@@ -127,7 +127,7 @@ export default function TermsOfService() {
               </div>
             </div>
 
-            <div className="bg-gradient-to-br from-blue-600 to-indigo-700 rounded-xl p-6 text-white">
+            <div className="bg-gradient-to-br from-amber-600 to-orange-700 rounded-xl p-6 text-white">
               <h4 className="font-bold mb-4 flex items-center gap-2">
                 <AlertCircle size={20} />
                 Obligaciones del Cliente
@@ -181,7 +181,7 @@ export default function TermsOfService() {
         {/* Final Note */}
         <div className="bg-gradient-to-br from-gray-50 to-white rounded-xl border border-gray-200 p-8">
           <div className="flex items-start gap-4">
-            <AlertCircle className="text-blue-600 mt-1 flex-shrink-0" size={24} />
+            <AlertCircle className="text-amber-600 mt-1 flex-shrink-0" size={24} />
             <div>
               <h4 className="font-bold mb-2">Nota Importante</h4>
               <p className="text-gray-600">

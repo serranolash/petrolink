@@ -85,21 +85,21 @@ export default function Assessment() {
             </div>
           </div>
           
-          <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl p-8">
+          <div className="bg-gradient-to-br from-amber-50 to-orange-50 rounded-2xl p-8">
             <div className="space-y-6">
               <div className="flex items-center justify-between">
                 <div className="font-bold">Clientes Satisfechos</div>
-                <div className="text-2xl font-bold text-blue-600">98%</div>
+                <div className="text-2xl font-bold text-amber-600">98%</div>
               </div>
               
               <div className="flex items-center justify-between">
                 <div className="font-bold">Ejecutivos Evaluados</div>
-                <div className="text-2xl font-bold text-blue-600">1,200+</div>
+                <div className="text-2xl font-bold text-amber-600">1,200+</div>
               </div>
               
               <div className="flex items-center justify-between">
                 <div className="font-bold">Tasa de Retención</div>
-                <div className="text-2xl font-bold text-blue-600">92%</div>
+                <div className="text-2xl font-bold text-amber-600">92%</div>
               </div>
               
               <div className="pt-6 border-t border-blue-100">
@@ -117,19 +117,19 @@ export default function Assessment() {
           
           <div className="grid md:grid-cols-3 gap-8">
             <div className="text-center">
-              <div className="text-4xl font-bold text-blue-400 mb-4">01</div>
+              <div className="text-4xl font-bold text-amber-400 mb-4">01</div>
               <h4 className="font-bold mb-3">Diagnóstico Inicial</h4>
               <p className="text-gray-300">Definición de competencias clave y diseño de evaluación</p>
             </div>
             
             <div className="text-center">
-              <div className="text-4xl font-bold text-blue-400 mb-4">02</div>
+              <div className="text-4xl font-bold text-amber-400 mb-4">02</div>
               <h4 className="font-bold mb-3">Implementación</h4>
               <p className="text-gray-300">Aplicación de metodologías y recolección de datos</p>
             </div>
             
             <div className="text-center">
-              <div className="text-4xl font-bold text-blue-400 mb-4">03</div>
+              <div className="text-4xl font-bold text-amber-400 mb-4">03</div>
               <h4 className="font-bold mb-3">Entrega de Resultados</h4>
               <p className="text-gray-300">Reporte ejecutivo y plan de desarrollo personalizado</p>
             </div>
@@ -145,7 +145,7 @@ export default function Assessment() {
             </p>
             <a 
               href="/contacto"
-              className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-bold rounded-xl hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
+              className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-amber-600 to-orange-600 text-white font-bold rounded-xl hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
             >
               Solicitar Demostración
               <TrendingUp size={20} />

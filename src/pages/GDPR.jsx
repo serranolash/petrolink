@@ -116,7 +116,7 @@ export default function GDPR() {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {rights.map((right, index) => (
               <div key={index} className="bg-white border border-gray-100 rounded-xl p-6 hover:shadow-lg hover:-translate-y-2 transition-all duration-300">
-                <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center text-white mb-6">
+                <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-amber-500 to-orange-600 flex items-center justify-center text-white mb-6">
                   {right.icon}
                 </div>
                 <h4 className="font-bold text-lg mb-3">{right.title}</h4>
@@ -127,7 +127,7 @@ export default function GDPR() {
         </div>
 
         {/* Compliance Measures */}
-        <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-3xl p-12">
+        <div className="bg-gradient-to-br from-amber-50 to-orange-50 rounded-3xl p-12">
           <h3 className="text-3xl font-bold mb-12 text-center">Medidas de Cumplimiento</h3>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">

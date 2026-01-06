@@ -96,18 +96,18 @@ export default function PrivacyPolicy() {
               </ul>
             </div>
 
-            <div className="bg-gradient-to-br from-blue-600 to-indigo-700 rounded-xl p-6 text-white">
+            <div className="bg-gradient-to-br from-amber-600 to-orange-700 rounded-xl p-6 text-white">
               <h4 className="font-bold mb-4 flex items-center gap-2">
                 <Eye size={20} />
                 Contacto DPO
               </h4>
-              <p className="text-blue-100 text-sm mb-4">
+              <p className="text-amber-600 text-sm mb-4">
                 Para preguntas sobre protección de datos, contacta a nuestro 
                 Delegado de Protección de Datos:
               </p>
               <div className="space-y-3">
                 <div className="flex items-center gap-3">
-                  <Mail size={16} className="text-blue-300" />
+                  <Mail size={16} className="text-amber-300" />
                   <span className="text-sm">dpo@ventalentexec.com</span>
                 </div>
                 <div className="text-xs text-blue-200">
@@ -143,7 +143,7 @@ export default function PrivacyPolicy() {
           </p>
           <a 
             href="/contacto"
-            className="inline-flex items-center gap-3 px-6 py-3 bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-bold rounded-xl hover:shadow-lg transition"
+            className="inline-flex items-center gap-3 px-6 py-3 bg-gradient-to-r from-amber-600 to-orange-600 text-white font-bold rounded-xl hover:shadow-lg transition"
           >
             <Mail size={18} />
             Contactar al DPO
