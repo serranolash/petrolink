@@ -120,14 +120,73 @@ export default function Layout({ children, title, subtitle }) {
             </div>
             
             <div>
-              <h4 className="text-white font-semibold mb-6">Contacto</h4>
-              <ul className="space-y-3">
-                <li className="flex items-center gap-2"><Mail size={16} /> talento@petrolinkvzla.com</li>
-                <li className="flex items-center gap-2"><Phone size={16} /> +58 412-PETROLINK</li>
-                <li className="flex items-center gap-2"><MapPin size={16} /> Caracas • Maracaibo • Punto Fijo</li>
+              <h4 className="text-white font-semibold mb-6">Contacto Directo</h4>
+              <ul className="space-y-4">
+                
+                {/* Email principal - Marielvis */}
+                <li className="group bg-gray-900/40 rounded-xl p-4 hover:bg-gray-800/60 transition-all duration-300 border border-gray-800 hover:border-amber-800/50">
+                  <div className="flex items-center gap-3">
+                    <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-amber-600/20 to-orange-700/20 flex items-center justify-center group-hover:scale-110 transition-transform">
+                      <Mail size={20} className="text-amber-400" />
+                    </div>
+                    <div className="flex-1">
+                      <div className="font-medium text-white">Lic. Marielvis Malave</div>
+                      <div className="text-sm text-amber-300">Directora de Talento</div>
+                      <a href="mailto:marielvismalave@gmail.com" 
+                        className="text-white hover:text-amber-300 transition text-sm md:text-base mt-1 block">
+                        marielvismalave@gmail.com
+                      </a>
+                    </div>
+                  </div>
+                </li>
+                
+                {/* WhatsApp */}
+                <li className="group bg-gray-900/40 rounded-xl p-4 hover:bg-gray-800/60 transition-all duration-300 border border-gray-800 hover:border-green-800/50">
+                  <div className="flex items-center gap-3">
+                    <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-green-600/20 to-emerald-700/20 flex items-center justify-center group-hover:scale-110 transition-transform">
+                      <Phone size={20} className="text-green-400" />
+                    </div>
+                    <div className="flex-1">
+                      <div className="font-medium text-white">WhatsApp Empresarial</div>
+                      <div className="text-sm text-green-300">Respuesta rápida</div>
+                      <a href="https://wa.me/541159121384" target="_blank" rel="noopener noreferrer"
+                        className="text-white hover:text-green-300 transition text-sm md:text-base mt-1 block">
+                        +54 1159121384
+                      </a>
+                    </div>
+                    <span className="text-xs text-green-400 bg-green-900/30 px-2 py-1 rounded-full">
+                      Activo
+                    </span>
+                  </div>
+                </li>
+                
+                {/* Ubicaciones */}
+                <li className="group bg-gray-900/40 rounded-xl p-4 hover:bg-gray-800/60 transition-all duration-300 border border-gray-800 hover:border-blue-800/50">
+                  <div className="flex items-center gap-3">
+                    <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-blue-600/20 to-cyan-700/20 flex items-center justify-center group-hover:scale-110 transition-transform">
+                      <MapPin size={20} className="text-blue-400" />
+                    </div>
+                    <div className="flex-1">
+                      <div className="font-medium text-white">Oficinas Internacionales</div>
+                      <div className="text-sm text-blue-300">Presencia global</div>
+                      <div className="text-white text-sm md:text-base mt-1 flex flex-wrap gap-2">
+                        <span className="px-2 py-1 bg-blue-900/30 rounded text-xs">Buenos Aires</span>
+                        <span className="px-2 py-1 bg-amber-900/30 rounded text-xs">Caracas</span>
+                        <span className="px-2 py-1 bg-green-900/30 rounded text-xs">Miami</span>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                
               </ul>
+              
+              {/* Horario */}
+              <div className="mt-6 p-3 bg-amber-900/10 rounded-lg border border-amber-800/30">
+                <p className="text-xs text-amber-200 text-center">
+                  <span className="font-semibold">Horario:</span> L-V 9:00-18:00 GMT-3 • Respuesta en 24h
+                </p>
+              </div>
             </div>
-            
             <div>
               <h4 className="text-white font-semibold mb-6">Legal</h4>
               <ul className="space-y-3">

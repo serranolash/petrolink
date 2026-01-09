@@ -916,14 +916,63 @@ export default function LandingPageExecutive() {
             </div>
             
             <div>
-              <h4 className="text-white font-semibold mb-6">Contacto</h4>
-              <ul className="space-y-3">
-                <li className="flex items-center gap-2"><Mail size={16} /> marielvismalave@petrolinkvzla.com</li>
-                <li className="flex items-center gap-2"><Phone size={16} /> +58 412-PETROLINK</li>
-                <li className="flex items-center gap-2"><MapPin size={16} /> Caracas • Maracaibo • Punto Fijo</li>
+  <h4 className="text-white font-semibold mb-6">Equipo Directivo</h4>
+  <ul className="space-y-4">
+    
+    {/* Información de Marielvis */}
+    <li className="flex items-start gap-2">
+      <div className="w-8 h-8 rounded-full bg-amber-500/20 flex items-center justify-center flex-shrink-0">
+        <Mail size={14} className="text-amber-400" />
+      </div>
+      <div>
+        <div className="font-medium text-white">LIC. MARIELVIS MALAVE FARIAS</div>
+        <div className="text-sm text-amber-300">Directora de Talento Humano</div>
+        <div className="text-xs text-gray-400 mt-1">Licenciada en Administración de Recursos Humanos</div>
+        <div className="flex items-center gap-2 mt-1">
+          <Phone size={12} className="text-gray-400" />
+          <span className="text-xs text-gray-400">+54 1155048485</span>
+        </div>
+        <div className="flex items-center gap-2 mt-1">
+          <Mail size={12} className="text-gray-400" />
+          <span className="text-xs text-gray-400">semalav14@gmail.com</span>
+        </div>
+      </div>
+    </li>
+    
+    {/* Información de Alex */}
+    <li className="flex items-start gap-2">
+      <div className="w-8 h-8 rounded-full bg-blue-500/20 flex items-center justify-center flex-shrink-0">
+        <svg className="w-4 h-4 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
+        </svg>
+      </div>
+                  <div>
+                    <div className="font-medium text-white">ING. ALEX SERRANO LASHLEY</div>
+                    <div className="text-sm text-blue-300">Director Tecnológico & Validador de Información</div>
+                    <div className="text-xs text-gray-400 mt-1">Ingeniero de Sistemas</div>
+                    <div className="flex items-center gap-2 mt-1">
+                      <Phone size={12} className="text-gray-400" />
+                      <span className="text-xs text-gray-400">+54 1159121384</span>
+                    </div>
+                    <div className="flex items-center gap-2 mt-1">
+                      <Mail size={12} className="text-gray-400" />
+                      <span className="text-xs text-gray-400">serranolash@gmail.com</span>
+                    </div>
+                  </div>
+                </li>
+                
+                {/* Ubicaciones */}
+                <li className="flex items-center gap-2 pt-4 border-t border-gray-800">
+                  <MapPin size={16} className="text-gray-400" />
+                  <div>
+                    <span className="text-sm text-gray-300">Oficinas Operativas:</span>
+                    <div className="text-xs text-gray-400">Buenos Aires • Caracas • Miami</div>
+                  </div>
+                </li>
+                
               </ul>
             </div>
-            
+                        
             <div>
               <h4 className="text-white font-semibold mb-6">Legal</h4>
               <ul className="space-y-3">
