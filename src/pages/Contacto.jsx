@@ -1,7 +1,7 @@
 // src/pages/Contacto.jsx
 import React, { useState } from 'react';
 import Layout from '../components/Layout';
-import { Mail, Phone, MapPin, Clock, MessageSquare, Send, CheckCircle2, Users, Zap } from 'lucide-react';
+import { Mail, Phone, MapPin, Clock, MessageSquare, Send, CheckCircle2, Users, Zap, User, Building } from 'lucide-react';
 import { db } from '../firebase';
 import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
 import { toast, Toaster } from 'react-hot-toast';
@@ -21,27 +21,24 @@ export default function Contacto() {
   const offices = [
     {
       city: "Caracas, Venezuela",
-      address: "Torre Petrolera, El Rosal",
+      address: "Centro Financiero Confinanzas",
       phone: "+58 412-PETROLINK",
-      email: "caracas@petrolinkvzla.com"
+      type: "Sede Operativa",
+      color: "from-amber-50 to-amber-100"
     },
     {
-      city: "Maracaibo, Venezuela",
-      address: "Zona Industrial, Costa Oriental",
-      phone: "+58 416-PETROLINK",
-      email: "maracaibo@petrolinkvzla.com"
+      city: "Buenos Aires, Argentina",
+      address: "Recoleta, Oficina Corporativa",
+      phone: "+54 1159121384",
+      type: "Sede Central",
+      color: "from-blue-50 to-cyan-100"
     },
     {
-      city: "Punto Fijo, Venezuela",
-      address: "Centro de Refinación Paraguaná",
-      phone: "+58 414-PETROLINK",
-      email: "puntofijo@petrolinkvzla.com"
-    },
-    {
-      city: "Houston, USA",
-      address: "Energy Corridor, Suite 1500",
-      phone: "+1 (713) 555-PETRO",
-      email: "houston@petrolinkvzla.com"
+      city: "Miami, USA",
+      address: "Brickell Avenue, Suite 850",
+      phone: "+1 (786) 555-4892",
+      type: "Enlace Internacional",
+      color: "from-green-50 to-emerald-100"
     }
   ];
 
@@ -62,7 +59,8 @@ export default function Contacto() {
         ...formData,
         timestamp: serverTimestamp(),
         tipo: 'contacto',
-        status: 'nuevo'
+        status: 'nuevo',
+        source: 'contacto_page'
       });
 
       setFormSubmitted(true);
@@ -77,9 +75,6 @@ export default function Contacto() {
         tipoConsulta: '',
         mensaje: ''
       });
-
-      // También podrías enviar email de notificación aquí
-      // await sendEmailNotification(formData);
 
     } catch (error) {
       console.error("Error al enviar mensaje:", error);
@@ -106,18 +101,26 @@ export default function Contacto() {
             <Zap className="text-amber-600" size={16} />
             <span className="text-sm font-semibold text-amber-700">CONTACTO ESTRATÉGICO</span>
           </div>
-          <h2 className="text-4xl font-bold mb-6">Conectamos Talento con Oportunidad</h2>
-          <p className="text-gray-600 text-lg">
-            Ya sea que busques retornar a la industria petrolera o necesites talento especializado, 
-            nuestro equipo está listo para facilitar la conexión.
+          <h2 className="text-4xl md:text-5xl font-bold mb-6">Conectamos Talento Petrolero</h2>
+          <p className="text-gray-600 text-lg md:text-xl">
+            Tu experiencia es valiosa. Conéctate directamente con nuestra directora de talento 
+            para oportunidades reales en la industria petrolera.
           </p>
         </div>
 
         {/* Contact Grid */}
         <div className="grid lg:grid-cols-2 gap-12">
           {/* Contact Form */}
-          <div className="bg-white rounded-2xl border border-gray-100 shadow-lg p-8">
-            <h3 className="text-2xl font-bold mb-6">Envía tu Consulta</h3>
+          <div className="bg-white rounded-2xl border border-gray-100 shadow-lg p-6 md:p-8">
+            <div className="flex items-center gap-3 mb-2">
+              <div className="w-10 h-10 rounded-lg bg-gradient-to-r from-amber-600 to-orange-600 flex items-center justify-center">
+                <Send className="text-white" size={20} />
+              </div>
+              <h3 className="text-2xl md:text-3xl font-bold">Envía tu Consulta</h3>
+            </div>
+            <p className="text-gray-600 mb-6">
+              Completa el formulario y Marielvis se comunicará contigo personalmente.
+            </p>
             
             {formSubmitted ? (
               <div className="text-center py-12">
@@ -126,8 +129,8 @@ export default function Contacto() {
                 </div>
                 <h4 className="text-2xl font-bold mb-3">¡Mensaje Enviado!</h4>
                 <p className="text-gray-600">
-                  Hemos recibido tu mensaje. Nuestro equipo especializado se pondrá en contacto 
-                  contigo en las próximas 24 horas.
+                  Marielvis Malave revisará tu mensaje personalmente y te contactará 
+                  en las próximas 24 horas hábiles.
                 </p>
               </div>
             ) : (
@@ -137,30 +140,40 @@ export default function Contacto() {
                     <label className="block text-sm font-medium text-gray-700 mb-2">
                       Nombre Completo *
                     </label>
-                    <input 
-                      type="text" 
-                      name="nombre"
-                      value={formData.nombre}
-                      onChange={handleChange}
-                      required 
-                      className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-amber-500 focus:ring-2 focus:ring-amber-200 transition"
-                      placeholder="Ing. Carlos Rodríguez"
-                    />
+                    <div className="relative">
+                      <div className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400">
+                        <User size={18} />
+                      </div>
+                      <input 
+                        type="text" 
+                        name="nombre"
+                        value={formData.nombre}
+                        onChange={handleChange}
+                        required 
+                        className="w-full pl-12 pr-4 py-3 rounded-lg border border-gray-300 focus:border-amber-500 focus:ring-2 focus:ring-amber-200 transition"
+                        placeholder="Ing. Carlos Rodríguez"
+                      />
+                    </div>
                   </div>
                   
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">
                       Empresa/Posición *
                     </label>
-                    <input 
-                      type="text" 
-                      name="empresa"
-                      value={formData.empresa}
-                      onChange={handleChange}
-                      required 
-                      className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-amber-500 focus:ring-2 focus:ring-amber-200 transition"
-                      placeholder="Superintendente de Producción"
-                    />
+                    <div className="relative">
+                      <div className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400">
+                        <Building size={18} />
+                      </div>
+                      <input 
+                        type="text" 
+                        name="empresa"
+                        value={formData.empresa}
+                        onChange={handleChange}
+                        required 
+                        className="w-full pl-12 pr-4 py-3 rounded-lg border border-gray-300 focus:border-amber-500 focus:ring-2 focus:ring-amber-200 transition"
+                        placeholder="Superintendente de Producción"
+                      />
+                    </div>
                   </div>
                 </div>
                 
@@ -169,30 +182,40 @@ export default function Contacto() {
                     <label className="block text-sm font-medium text-gray-700 mb-2">
                       Email *
                     </label>
-                    <input 
-                      type="email" 
-                      name="email"
-                      value={formData.email}
-                      onChange={handleChange}
-                      required 
-                      className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-amber-500 focus:ring-2 focus:ring-amber-200 transition"
-                      placeholder="c.rodriguez@empresa.com"
-                    />
+                    <div className="relative">
+                      <div className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400">
+                        <Mail size={18} />
+                      </div>
+                      <input 
+                        type="email" 
+                        name="email"
+                        value={formData.email}
+                        onChange={handleChange}
+                        required 
+                        className="w-full pl-12 pr-4 py-3 rounded-lg border border-gray-300 focus:border-amber-500 focus:ring-2 focus:ring-amber-200 transition"
+                        placeholder="c.rodriguez@empresa.com"
+                      />
+                    </div>
                   </div>
                   
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">
                       Teléfono *
                     </label>
-                    <input 
-                      type="tel" 
-                      name="telefono"
-                      value={formData.telefono}
-                      onChange={handleChange}
-                      required 
-                      className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-amber-500 focus:ring-2 focus:ring-amber-200 transition"
-                      placeholder="+58 412-XXX-XXXX"
-                    />
+                    <div className="relative">
+                      <div className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400">
+                        <Phone size={18} />
+                      </div>
+                      <input 
+                        type="tel" 
+                        name="telefono"
+                        value={formData.telefono}
+                        onChange={handleChange}
+                        required 
+                        className="w-full pl-12 pr-4 py-3 rounded-lg border border-gray-300 focus:border-amber-500 focus:ring-2 focus:ring-amber-200 transition"
+                        placeholder="+58 412-XXX-XXXX"
+                      />
+                    </div>
                   </div>
                 </div>
                 
@@ -208,8 +231,9 @@ export default function Contacto() {
                     className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-amber-500 focus:ring-2 focus:ring-amber-200 transition"
                   >
                     <option value="">Selecciona una opción</option>
-                    <option value="specialist">Soy especialista buscando reinserción</option>
-                    <option value="company">Represento una empresa petrolera</option>
+                    <option value="specialist">Soy especialista petrolero</option>
+                    <option value="returning">Quiero regresar a Venezuela</option>
+                    <option value="company">Soy empresa buscando talento</option>
                     <option value="other">Otra consulta</option>
                   </select>
                 </div>
@@ -224,15 +248,15 @@ export default function Contacto() {
                     value={formData.mensaje}
                     onChange={handleChange}
                     required 
-                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-amber-500 focus:ring-2 focus:ring-amber-200 transition"
-                    placeholder="Describe brevemente tu situación y cómo podemos ayudarte..."
+                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-amber-500 focus:ring-2 focus:ring-amber-200 transition resize-none"
+                    placeholder="Describe brevemente tu experiencia, certificaciones y lo que buscas en tu próximo rol..."
                   ></textarea>
                 </div>
                 
                 <button 
                   type="submit"
                   disabled={loading}
-                  className={`w-full py-4 bg-gradient-to-r from-amber-600 to-orange-600 text-white font-bold rounded-xl hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex items-center justify-center gap-3 ${loading ? 'opacity-70 cursor-not-allowed' : ''}`}
+                  className={`w-full py-4 bg-gradient-to-r from-amber-600 to-orange-600 text-white font-bold rounded-xl hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300 flex items-center justify-center gap-3 ${loading ? 'opacity-70 cursor-not-allowed' : ''}`}
                 >
                   {loading ? (
                     <>
@@ -241,7 +265,7 @@ export default function Contacto() {
                     </>
                   ) : (
                     <>
-                      Enviar Mensaje
+                      Enviar a Marielvis Malave
                       <Send size={20} />
                     </>
                   )}
@@ -252,68 +276,130 @@ export default function Contacto() {
 
           {/* Contact Info */}
           <div className="space-y-8">
-            {/* Offices */}
-            <div>
-              <h3 className="text-2xl font-bold mb-6">Oficinas Estratégicas</h3>
-              <div className="grid md:grid-cols-2 gap-6">
-                {offices.map((office, index) => (
-                  <div key={index} className="bg-gradient-to-br from-amber-50 to-orange-50 rounded-xl p-6">
-                    <div className="flex items-center gap-3 mb-4">
-                      <MapPin className="text-amber-600" size={20} />
-                      <h4 className="font-bold">{office.city}</h4>
+            {/* Contacto Directo */}
+            <div className="bg-gradient-to-br from-gray-900 to-gray-950 rounded-2xl p-6 md:p-8 text-white">
+              <h3 className="text-2xl font-bold mb-6 flex items-center gap-3">
+                <div className="w-10 h-10 rounded-lg bg-amber-900 flex items-center justify-center">
+                  <MessageSquare size={24} />
+                </div>
+                Contacto Directo
+              </h3>
+              
+              <div className="space-y-6">
+                {/* Marielvis Malave */}
+                <div className="bg-gray-800/50 rounded-xl p-5 border border-gray-700">
+                  <div className="flex items-center gap-4 mb-4">
+                    <div className="w-14 h-14 rounded-full bg-gradient-to-br from-amber-600 to-orange-600 flex items-center justify-center">
+                      <User className="text-white" size={24} />
                     </div>
-                    <div className="space-y-2 text-sm text-gray-600">
-                      <div>{office.address}</div>
+                    <div>
+                      <div className="font-bold text-lg">Lic. Marielvis Malave</div>
+                      <div className="text-amber-300 text-sm">Directora de Talento Petrolero</div>
+                    </div>
+                  </div>
+                  
+                  <div className="space-y-3">
+                    <div className="flex items-center gap-3">
+                      <Mail size={18} className="text-gray-400" />
+                      <div>
+                        <div className="text-gray-400 text-sm">Correo personal</div>
+                        <a href="mailto:marielvismalave@gmail.com" 
+                           className="text-white hover:text-amber-300 transition font-medium">
+                          marielvismalave@gmail.com
+                        </a>
+                      </div>
+                    </div>
+                    
+                    <div className="flex items-center gap-3">
+                      <Phone size={18} className="text-gray-400" />
+                      <div>
+                        <div className="text-gray-400 text-sm">WhatsApp directo</div>
+                        <a href="https://wa.me/541155048485" target="_blank" rel="noopener noreferrer"
+                           className="text-white hover:text-green-300 transition font-medium">
+                          +54 1155048485
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                {/* Soporte Técnico */}
+                <div className="bg-gray-800/50 rounded-xl p-5 border border-gray-700">
+                  <div className="flex items-center gap-3 mb-4">
+                    <Users className="text-blue-400" size={20} />
+                    <div className="font-bold">Soporte Técnico</div>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <Phone size={18} className="text-gray-400" />
+                    <a href="https://wa.me/541159121384" target="_blank" rel="noopener noreferrer"
+                       className="text-blue-300 hover:text-blue-200 transition">
+                      +54 1159121384
+                    </a>
+                    <span className="text-xs text-green-400 bg-green-900/30 px-2 py-1 rounded">WhatsApp</span>
+                  </div>
+                </div>
+                
+                {/* Horario */}
+                <div className="flex items-center gap-4 p-4 bg-amber-900/20 rounded-xl border border-amber-800/30">
+                  <Clock className="text-amber-400" size={24} />
+                  <div>
+                    <div className="font-bold">Horario de Atención</div>
+                    <div className="text-sm text-amber-300">Lunes a Viernes 9:00 - 18:00 (GMT-3)</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Oficinas */}
+            <div>
+              <h3 className="text-2xl font-bold mb-6">Oficinas Operativas</h3>
+              <div className="space-y-4">
+                {offices.map((office, index) => (
+                  <div key={index} className={`bg-gradient-to-br ${office.color} rounded-xl p-5 border border-gray-200`}>
+                    <div className="flex items-center gap-3 mb-3">
+                      <div className="w-10 h-10 rounded-lg bg-white border border-gray-300 flex items-center justify-center">
+                        <MapPin className={index === 0 ? "text-amber-600" : index === 1 ? "text-blue-600" : "text-green-600"} size={20} />
+                      </div>
+                      <div>
+                        <h4 className="font-bold text-gray-900">{office.city}</h4>
+                        <div className="text-xs text-gray-600 bg-white/50 px-2 py-1 rounded-full inline-block">
+                          {office.type}
+                        </div>
+                      </div>
+                    </div>
+                    <div className="space-y-2 text-sm text-gray-700">
                       <div className="flex items-center gap-2">
-                        <Phone size={16} />
-                        {office.phone}
+                        <MapPin size={14} className="text-gray-500" />
+                        {office.address}
                       </div>
                       <div className="flex items-center gap-2">
-                        <Mail size={16} />
-                        {office.email}
+                        <Phone size={14} className="text-gray-500" />
+                        {office.phone}
                       </div>
                     </div>
                   </div>
                 ))}
               </div>
             </div>
-
-            {/* Quick Contact */}
-            <div className="bg-gradient-to-br from-gray-900 to-gray-950 rounded-2xl p-8 text-white">
-              <h3 className="text-2xl font-bold mb-6">Contacto Directo</h3>
-              <div className="space-y-6">
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-lg bg-amber-900 flex items-center justify-center">
-                    <MessageSquare size={24} />
-                  </div>
-                  <div>
-                    <div className="font-bold">Consultas Generales</div>
-                    <div className="text-amber-300">marielvismalave@petrolinkvzla.com</div>
-                  </div>
-                </div>
-                
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-lg bg-amber-900 flex items-center justify-center">
-                    <Users size={24} />
-                  </div>
-                  <div>
-                    <div className="font-bold">Especialistas Petroleros</div>
-                    <div className="text-amber-300">especialistas@petrolinkvzla.com</div>
-                  </div>
-                </div>
-                
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-lg bg-amber-900 flex items-center justify-center">
-                    <Clock size={24} />
-                  </div>
-                  <div>
-                    <div className="font-bold">Horario de Atención</div>
-                    <div className="text-amber-300">24/7 para emergencias de talento crítico</div>
-                  </div>
-                </div>
-              </div>
-            </div>
           </div>
+        </div>
+
+        {/* CTA Final */}
+        <div className="bg-gradient-to-br from-amber-900 to-orange-900 rounded-2xl p-8 md:p-12 text-center text-white">
+          <h3 className="text-2xl md:text-3xl font-bold mb-4">
+            ¿Listo para tu próximo paso en la industria petrolera?
+          </h3>
+          <p className="text-amber-100 mb-6 max-w-2xl mx-auto">
+            Más de 500 especialistas ya han confiado en nosotros para su reinserción profesional. 
+            Tu experiencia es nuestro activo más valioso.
+          </p>
+          <button 
+            onClick={() => document.querySelector('form')?.scrollIntoView({ behavior: 'smooth' })}
+            className="px-8 py-3 bg-white text-amber-900 font-bold rounded-xl hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 inline-flex items-center gap-2"
+          >
+            <Send size={18} />
+            Contactar a Marielvis
+          </button>
         </div>
       </div>
     </Layout>
