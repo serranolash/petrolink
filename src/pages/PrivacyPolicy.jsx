@@ -40,7 +40,7 @@ export default function PrivacyPolicy() {
         {/* Hero */}
         <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl p-8">
           <div className="flex items-center gap-4 mb-6">
-            <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-blue-600 to-indigo-700 flex items-center justify-center">
+            <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-amber-600 to-orange-700 flex items-center justify-center">
               <Shield className="text-white" size={28} />
             </div>
             <div>
