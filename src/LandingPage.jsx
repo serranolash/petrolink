@@ -306,6 +306,7 @@ export default function LandingPageExecutive() {
               <Link to="/servicios" className="text-gray-600 hover:text-amber-600 font-medium transition">Servicios</Link>
               <Link to="/headhunting-ejecutivo" className="text-gray-600 hover:text-amber-600 font-medium transition">Headhunting</Link>
               <Link to="/contacto" className="text-gray-600 hover:text-amber-600 font-medium transition">Contacto</Link>
+              <Link to="/admin" className="text-gray-600 hover:text-amber-600 font-medium transition">Admin</Link>
               <button 
                 onClick={scrollToForm}
                 className="px-6 py-3 rounded-full bg-gradient-to-r from-amber-600 to-orange-600 text-white font-semibold hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300 flex items-center gap-2"
