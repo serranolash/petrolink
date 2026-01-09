@@ -74,23 +74,23 @@ export default function PrivacyPolicy() {
               </h4>
               <ul className="space-y-3">
                 <li className="flex items-start gap-2">
-                  <div className="w-2 h-2 bg-blue-500 rounded-full mt-2"></div>
+                  <div className="w-2 h-2 bg-amber-500 rounded-full mt-2"></div>
                   <span className="text-sm">Transparencia en el procesamiento</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <div className="w-2 h-2 bg-blue-500 rounded-full mt-2"></div>
+                  <div className="w-2 h-2 bg-amber-500 rounded-full mt-2"></div>
                   <span className="text-sm">Limitación de la finalidad</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <div className="w-2 h-2 bg-blue-500 rounded-full mt-2"></div>
+                  <div className="w-2 h-2 bg-amber-500 rounded-full mt-2"></div>
                   <span className="text-sm">Minimización de datos</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <div className="w-2 h-2 bg-blue-500 rounded-full mt-2"></div>
+                  <div className="w-2 h-2 bg-amber-500 rounded-full mt-2"></div>
                   <span className="text-sm">Exactitud de la información</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <div className="w-2 h-2 bg-blue-500 rounded-full mt-2"></div>
+                  <div className="w-2 h-2 bg-amber-500 rounded-full mt-2"></div>
                   <span className="text-sm">Almacenamiento limitado</span>
                 </li>
               </ul>
@@ -126,10 +126,10 @@ export default function PrivacyPolicy() {
                   Nuestras prácticas cumplen con:
                 </div>
                 <div className="flex flex-wrap gap-2">
-                  <span className="px-3 py-1 bg-blue-50 text-blue-700 rounded-full text-xs font-medium">GDPR</span>
-                  <span className="px-3 py-1 bg-blue-50 text-blue-700 rounded-full text-xs font-medium">CCPA</span>
-                  <span className="px-3 py-1 bg-blue-50 text-blue-700 rounded-full text-xs font-medium">LGPD</span>
-                  <span className="px-3 py-1 bg-blue-50 text-blue-700 rounded-full text-xs font-medium">ISO 27001</span>
+                  <span className="px-3 py-1 bg-blue-50 text-amber-700 rounded-full text-xs font-medium">GDPR</span>
+                  <span className="px-3 py-1 bg-blue-50 text-amber-700 rounded-full text-xs font-medium">CCPA</span>
+                  <span className="px-3 py-1 bg-blue-50 text-amber-700 rounded-full text-xs font-medium">LGPD</span>
+                  <span className="px-3 py-1 bg-blue-50 text-amber-700 rounded-full text-xs font-medium">ISO 27001</span>
                 </div>
               </div>
             </div>

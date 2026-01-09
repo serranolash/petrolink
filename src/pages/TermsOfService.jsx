@@ -67,9 +67,9 @@ export default function TermsOfService() {
     >
       <div className="space-y-12">
         {/* Hero */}
-        <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl p-8">
+        <div className="bg-gradient-to-br from-amber-50 to-indigo-50 rounded-2xl p-8">
           <div className="flex items-center gap-4 mb-6">
-            <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-blue-600 to-indigo-700 flex items-center justify-center">
+            <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-amber-600 to-orange-700 flex items-center justify-center">
               <Scale className="text-white" size={28} />
             </div>
             <div>
@@ -95,7 +95,7 @@ export default function TermsOfService() {
                 <ul className="space-y-3">
                   {section.content.map((item, itemIndex) => (
                     <li key={itemIndex} className="flex items-start gap-3">
-                      <div className="w-2 h-2 bg-blue-500 rounded-full mt-2 flex-shrink-0"></div>
+                      <div className="w-2 h-2 bg-amber-500 rounded-full mt-2 flex-shrink-0"></div>
                       <span className="text-gray-600">{item}</span>
                     </li>
                   ))}
@@ -108,7 +108,7 @@ export default function TermsOfService() {
           <div className="space-y-8">
             <div className="bg-white border border-gray-100 rounded-xl p-6 shadow-sm">
               <h4 className="font-bold mb-4 flex items-center gap-2">
-                <Clock size={20} className="text-blue-600" />
+                <Clock size={20} className="text-amber-600" />
                 Plazos Clave
               </h4>
               <div className="space-y-4">
@@ -134,19 +134,19 @@ export default function TermsOfService() {
               </h4>
               <ul className="space-y-3 text-sm">
                 <li className="flex items-start gap-2">
-                  <CheckCircle2 size={16} className="text-blue-300 mt-0.5 flex-shrink-0" />
+                  <CheckCircle2 size={16} className="text-amber-300 mt-0.5 flex-shrink-0" />
                   <span>Proporcionar información precisa y completa</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <CheckCircle2 size={16} className="text-blue-300 mt-0.5 flex-shrink-0" />
+                  <CheckCircle2 size={16} className="text-amber-300 mt-0.5 flex-shrink-0" />
                   <span>Cumplir con plazos de respuesta acordados</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <CheckCircle2 size={16} className="text-blue-300 mt-0.5 flex-shrink-0" />
+                  <CheckCircle2 size={16} className="text-amber-300 mt-0.5 flex-shrink-0" />
                   <span>Respetar acuerdos de confidencialidad</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <CheckCircle2 size={16} className="text-blue-300 mt-0.5 flex-shrink-0" />
+                  <CheckCircle2 size={16} className="text-amber-300 mt-0.5 flex-shrink-0" />
                   <span>Informar decisiones de contratación</span>
                 </li>
               </ul>
@@ -162,15 +162,15 @@ export default function TermsOfService() {
               </p>
               <ul className="space-y-2 text-sm">
                 <li className="flex items-center gap-2">
-                  <div className="w-1.5 h-1.5 bg-blue-500 rounded-full"></div>
+                  <div className="w-1.5 h-1.5 bg-amber-500 rounded-full"></div>
                   <span>Autorizas el uso de tu información</span>
                 </li>
                 <li className="flex items-center gap-2">
-                  <div className="w-1.5 h-1.5 bg-blue-500 rounded-full"></div>
+                  <div className="w-1.5 h-1.5 bg-amber-500 rounded-full"></div>
                   <span>Confirmas la veracidad de tus datos</span>
                 </li>
                 <li className="flex items-center gap-2">
-                  <div className="w-1.5 h-1.5 bg-blue-500 rounded-full"></div>
+                  <div className="w-1.5 h-1.5 bg-amber-500 rounded-full"></div>
                   <span>Aceptas nuestra Política de Privacidad</span>
                 </li>
               </ul>
