@@ -101,7 +101,7 @@ export default function PrivacyPolicy() {
                 <Eye size={20} />
                 Contacto DPO
               </h4>
-              <p className="text-blue-600 text-sm mb-4">
+              <p className="text-white-600 text-sm mb-4">
                 Para preguntas sobre protección de datos, contacta a nuestro 
                 Delegado de Protección de Datos:
               </p>
