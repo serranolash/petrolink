@@ -14,6 +14,7 @@ import Contacto from './pages/Contacto'
 import PrivacyPolicy from './pages/PrivacyPolicy'
 import TermsOfService from './pages/TermsOfService'
 import GDPR from './pages/GDPR'
+import Admin from './pages/Admin'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
@@ -28,6 +29,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <Route path="/politica-privacidad" element={<PrivacyPolicy />} />
         <Route path="/terminos-servicio" element={<TermsOfService />} />
         <Route path="/gdpr-compliance" element={<GDPR />} />
+        <Route path="/admin" element={<Admin />} />
       </Routes>
     </Router>
   </React.StrictMode>,
