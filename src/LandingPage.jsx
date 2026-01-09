@@ -10,11 +10,15 @@ import {
   Zap, Home, Flag, CheckCircle, Building2, Anchor,
   HardHat, Wrench, Activity, BarChart
 } from "lucide-react";
+import { saveCandidate, uploadCV, getUserIP } from './utils/firebaseUtils';
 
 export default function LandingPageExecutive() {
   const formRef = useRef(null);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [formSubmitted, setFormSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [cvFile, setCVFile] = useState(null);
+  
   const [formData, setFormData] = useState({
     nombre: "",
     email: "",
@@ -46,31 +50,125 @@ export default function LandingPageExecutive() {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleFileChange = (e) => {
+    if (e.target.files && e.target.files[0]) {
+      const file = e.target.files[0];
+      // Validar tamaño (máximo 5MB)
+      if (file.size > 5 * 1024 * 1024) {
+        alert("El archivo es demasiado grande. Máximo 5MB.");
+        return;
+      }
+      // Validar tipo de archivo
+      const validTypes = ['application/pdf', 'application/msword', 
+                         'application/vnd.openxmlformats-officedocument.wordprocessingml.document'];
+      if (!validTypes.includes(file.type)) {
+        alert("Formato no válido. Solo se aceptan PDF, DOC o DOCX.");
+        return;
+      }
+      setCVFile(file);
+    }
+  };
+
+  const resetForm = () => {
+    setFormData({
+      nombre: "",
+      email: "",
+      telefono: "",
+      linkedin: "",
+      experienciaOilGas: "",
+      ultimaPosicion: "",
+      certificaciones: "",
+      paisResidencia: "",
+      segmentoExperticia: "",
+      disponibilidadReubicacion: "",
+      nivelIngles: "",
+      expectativaSalarial: "",
+      vinculoPrevPDVSA: "",
+      tiempoMovilizacion: "",
+      descripcion: ""
+    });
+    setCVFile(null);
+    // Reset file input
+    const fileInput = document.querySelector('input[type="file"]');
+    if (fileInput) fileInput.value = "";
+  };
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Simulación de envío del formulario
-    setFormSubmitted(true);
-    setTimeout(() => {
-      setFormSubmitted(false);
-      // Reset form
-      setFormData({
-        nombre: "",
-        email: "",
-        telefono: "",
-        linkedin: "",
-        experienciaOilGas: "",
-        ultimaPosicion: "",
-        certificaciones: "",
-        paisResidencia: "",
-        segmentoExperticia: "",
-        disponibilidadReubicacion: "",
-        nivelIngles: "",
-        expectativaSalarial: "",
-        vinculoPrevPDVSA: "",
-        tiempoMovilizacion: "",
-        descripcion: ""
-      });
-    }, 3000);
+    setIsSubmitting(true);
+
+    try {
+      // Validar campos requeridos
+      const requiredFields = ['nombre', 'email', 'telefono', 'experienciaOilGas', 
+                              'ultimaPosicion', 'paisResidencia', 'segmentoExperticia',
+                              'nivelIngles', 'expectativaSalarial'];
+      for (const field of requiredFields) {
+        if (!formData[field] || formData[field] === `Seleccionar ${field}` || 
+            formData[field].includes("Seleccionar")) {
+          alert(`Por favor complete el campo: ${field}`);
+          setIsSubmitting(false);
+          return;
+        }
+      }
+
+      // Obtener IP del usuario
+      const ipAddress = await getUserIP();
+      
+      // Crear objeto de datos del candidato
+      const candidateData = {
+        ...formData,
+        ipAddress,
+        userAgent: navigator.userAgent,
+        pageUrl: window.location.href,
+        submissionDate: new Date().toISOString(),
+        timestamp: Date.now(),
+        cvUploaded: false,
+        cvUrl: null,
+        status: "new",
+        source: "landing_page"
+      };
+
+      console.log("Enviando datos del candidato:", candidateData);
+
+      // Paso 1: Guardar datos básicos en Firestore
+      const saveResult = await saveCandidate(candidateData);
+      
+      if (!saveResult.success) {
+        throw new Error(saveResult.error || "Error al guardar datos");
+      }
+
+      const candidateId = saveResult.id;
+      console.log("Candidato guardado con ID:", candidateId);
+
+      // Paso 2: Subir CV si existe
+      if (cvFile) {
+        console.log("Subiendo CV...");
+        const cvResult = await uploadCV(cvFile, candidateId);
+        
+        if (cvResult && cvResult.success) {
+          console.log("CV subido exitosamente:", cvResult.url);
+          // Aquí podrías actualizar el documento con la URL del CV
+          // Necesitarías una función updateCandidate en firebaseUtils
+        } else {
+          console.warn("CV no se pudo subir:", cvResult?.error);
+        }
+      }
+
+      // Éxito
+      setFormSubmitted(true);
+      resetForm();
+
+      // Resetear después de 5 segundos
+      setTimeout(() => {
+        setFormSubmitted(false);
+      }, 5000);
+
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      alert(`Hubo un error al enviar el formulario: ${error.message}. Por favor intenta de nuevo.`);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   // Opciones para los selects del formulario
@@ -187,7 +285,6 @@ export default function LandingPageExecutive() {
 
   return (
     <main className="font-sans bg-white text-gray-900 antialiased overflow-x-hidden">
-
       {/* ================= NAVBAR PREMIUM ================= */}
       <nav className="fixed w-full z-50 bg-white/95 backdrop-blur-xl border-b border-gray-100 shadow-sm">
         <div className="max-w-7xl mx-auto px-6">
@@ -252,7 +349,6 @@ export default function LandingPageExecutive() {
         <div className="absolute inset-0 -z-10">
           <div className="absolute top-1/4 -left-32 w-[600px] h-[600px] bg-amber-500/10 rounded-full blur-[100px]"></div>
           <div className="absolute bottom-1/4 -right-32 w-[500px] h-[500px] bg-orange-500/10 rounded-full blur-[100px]"></div>
-          {/* Patrón de pozos petroleros */}
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_1px_1px,rgba(251,191,36,0.05)_1px,transparent_0)] bg-[size:40px_40px]"></div>
         </div>
 
@@ -280,7 +376,6 @@ export default function LandingPageExecutive() {
               </p>
 
               <div className="mt-12 space-y-6">
-                {/* Puntos de dolor y solución */}
                 <div className="flex items-start gap-4 bg-amber-50 rounded-xl p-4 border border-amber-100">
                   <CheckCircle className="text-amber-600 mt-1" size={20} />
                   <div>
@@ -503,7 +598,7 @@ export default function LandingPageExecutive() {
                 </p>
                 <button 
                   onClick={() => setFormSubmitted(false)}
-                  className="text-amber-400 hover:text-amber-300 font-medium"
+                  className="px-6 py-3 rounded-lg bg-gray-700 hover:bg-gray-600 text-white font-medium transition"
                 >
                   Registrar otro perfil
                 </button>
@@ -580,7 +675,6 @@ export default function LandingPageExecutive() {
                     onChange={handleInputChange}
                     icon={<AwardIcon size={20} />}
                     options={certificacionesOptions}
-                    required
                   />
                   
                   {/* PREGUNTA 4: País de residencia */}
@@ -613,7 +707,6 @@ export default function LandingPageExecutive() {
                     onChange={handleInputChange}
                     icon={<Home size={20} />}
                     options={disponibilidadesReubicacion}
-                    required
                   />
                   
                   {/* PREGUNTA 7: Nivel de Inglés */}
@@ -646,7 +739,6 @@ export default function LandingPageExecutive() {
                     onChange={handleInputChange}
                     icon={<Building2 size={20} />}
                     options={vinculosPrevPDVSA}
-                    required
                   />
                   
                   {/* PREGUNTA 10: Tiempo de movilización */}
@@ -657,7 +749,6 @@ export default function LandingPageExecutive() {
                     onChange={handleInputChange}
                     icon={<Clock size={20} />}
                     options={tiemposMovilizacion}
-                    required
                   />
                 </div>
 
@@ -675,7 +766,7 @@ export default function LandingPageExecutive() {
                   />
                 </div>
 
-                {/* CV Upload */}
+                {/* CV Upload - MODIFICADO */}
                 <div className="bg-gray-900/50 rounded-xl border border-gray-800 p-4 md:p-6">
                   <div className="flex items-center gap-4">
                     <div className="w-12 h-12 rounded-lg bg-amber-900/50 flex items-center justify-center">
@@ -684,10 +775,21 @@ export default function LandingPageExecutive() {
                     <div className="flex-1">
                       <div className="font-medium text-white mb-1">Adjuntar CV y Certificaciones</div>
                       <div className="text-sm text-gray-400">PDF, DOC, DOCX - máximo 5MB (opcional pero recomendado)</div>
+                      {cvFile && (
+                        <div className="mt-2 text-sm text-amber-300 flex items-center gap-2">
+                          <CheckCircle size={16} />
+                          {cvFile.name} ({(cvFile.size / 1024 / 1024).toFixed(2)} MB)
+                        </div>
+                      )}
                     </div>
                     <label className="px-4 py-2 bg-gray-800 hover:bg-gray-700 rounded-lg text-sm font-medium cursor-pointer transition">
-                      <span>Seleccionar archivos</span>
-                      <input type="file" className="hidden" accept=".pdf,.doc,.docx" multiple />
+                      <span>Seleccionar archivo</span>
+                      <input 
+                        type="file" 
+                        className="hidden" 
+                        accept=".pdf,.doc,.docx" 
+                        onChange={handleFileChange}
+                      />
                     </label>
                   </div>
                 </div>
@@ -702,10 +804,23 @@ export default function LandingPageExecutive() {
 
                 <button 
                   type="submit"
-                  className="group w-full py-4 md:py-5 rounded-xl bg-gradient-to-r from-amber-600 to-orange-600 text-white font-bold hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300 flex items-center justify-center gap-3"
+                  disabled={isSubmitting}
+                  className={`group w-full py-4 md:py-5 rounded-xl bg-gradient-to-r from-amber-600 to-orange-600 text-white font-bold hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300 flex items-center justify-center gap-3 ${isSubmitting ? 'opacity-70 cursor-not-allowed' : ''}`}
                 >
-                  <span>Enviar Perfil de Especialista</span>
-                  <ArrowRight size={20} className="group-hover:translate-x-2 transition-transform" />
+                  {isSubmitting ? (
+                    <>
+                      <svg className="animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                        <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                        <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                      </svg>
+                      <span>Enviando...</span>
+                    </>
+                  ) : (
+                    <>
+                      <span>Enviar Perfil de Especialista</span>
+                      <ArrowRight size={20} className="group-hover:translate-x-2 transition-transform" />
+                    </>
+                  )}
                 </button>
               </form>
             )}
@@ -824,7 +939,6 @@ export default function LandingPageExecutive() {
           </div>
         </div>
       </footer>
-
     </main>
   );
 }
