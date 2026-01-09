@@ -2,9 +2,21 @@
 import React, { useState } from 'react';
 import Layout from '../components/Layout';
 import { Mail, Phone, MapPin, Clock, MessageSquare, Send, CheckCircle2, Users, Zap } from 'lucide-react';
+import { db } from '../firebase';
+import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
+import { toast, Toaster } from 'react-hot-toast';
 
 export default function Contacto() {
   const [formSubmitted, setFormSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [formData, setFormData] = useState({
+    nombre: '',
+    empresa: '',
+    email: '',
+    telefono: '',
+    tipoConsulta: '',
+    mensaje: ''
+  });
 
   const offices = [
     {
@@ -33,10 +45,51 @@ export default function Contacto() {
     }
   ];
 
-  const handleSubmit = (e) => {
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    });
+  };
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setFormSubmitted(true);
-    setTimeout(() => setFormSubmitted(false), 3000);
+    setLoading(true);
+
+    try {
+      // Guardar en Firebase
+      await addDoc(collection(db, "messages"), {
+        ...formData,
+        timestamp: serverTimestamp(),
+        tipo: 'contacto',
+        status: 'nuevo'
+      });
+
+      setFormSubmitted(true);
+      toast.success('¡Mensaje enviado exitosamente!');
+      
+      // Reset form
+      setFormData({
+        nombre: '',
+        empresa: '',
+        email: '',
+        telefono: '',
+        tipoConsulta: '',
+        mensaje: ''
+      });
+
+      // También podrías enviar email de notificación aquí
+      // await sendEmailNotification(formData);
+
+    } catch (error) {
+      console.error("Error al enviar mensaje:", error);
+      toast.error('Error al enviar el mensaje. Intenta de nuevo.');
+    } finally {
+      setLoading(false);
+      setTimeout(() => {
+        setFormSubmitted(false);
+      }, 5000);
+    }
   };
 
   return (
@@ -44,6 +97,8 @@ export default function Contacto() {
       title="Contacto Petrolero" 
       subtitle="Conecta con nuestro equipo especializado en reinserción del talento petrolero venezolano."
     >
+      <Toaster position="top-right" />
+      
       <div className="space-y-20">
         {/* Hero */}
         <div className="text-center max-w-3xl mx-auto">
@@ -84,6 +139,9 @@ export default function Contacto() {
                     </label>
                     <input 
                       type="text" 
+                      name="nombre"
+                      value={formData.nombre}
+                      onChange={handleChange}
                       required 
                       className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-amber-500 focus:ring-2 focus:ring-amber-200 transition"
                       placeholder="Ing. Carlos Rodríguez"
@@ -96,6 +154,9 @@ export default function Contacto() {
                     </label>
                     <input 
                       type="text" 
+                      name="empresa"
+                      value={formData.empresa}
+                      onChange={handleChange}
                       required 
                       className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-amber-500 focus:ring-2 focus:ring-amber-200 transition"
                       placeholder="Superintendente de Producción"
@@ -110,6 +171,9 @@ export default function Contacto() {
                     </label>
                     <input 
                       type="email" 
+                      name="email"
+                      value={formData.email}
+                      onChange={handleChange}
                       required 
                       className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-amber-500 focus:ring-2 focus:ring-amber-200 transition"
                       placeholder="c.rodriguez@empresa.com"
@@ -122,6 +186,9 @@ export default function Contacto() {
                     </label>
                     <input 
                       type="tel" 
+                      name="telefono"
+                      value={formData.telefono}
+                      onChange={handleChange}
                       required 
                       className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-amber-500 focus:ring-2 focus:ring-amber-200 transition"
                       placeholder="+58 412-XXX-XXXX"
@@ -134,6 +201,9 @@ export default function Contacto() {
                     Tipo de Consulta *
                   </label>
                   <select 
+                    name="tipoConsulta"
+                    value={formData.tipoConsulta}
+                    onChange={handleChange}
                     required 
                     className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-amber-500 focus:ring-2 focus:ring-amber-200 transition"
                   >
@@ -150,6 +220,9 @@ export default function Contacto() {
                   </label>
                   <textarea 
                     rows="4"
+                    name="mensaje"
+                    value={formData.mensaje}
+                    onChange={handleChange}
                     required 
                     className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-amber-500 focus:ring-2 focus:ring-amber-200 transition"
                     placeholder="Describe brevemente tu situación y cómo podemos ayudarte..."
@@ -158,10 +231,20 @@ export default function Contacto() {
                 
                 <button 
                   type="submit"
-                  className="w-full py-4 bg-gradient-to-r from-amber-600 to-orange-600 text-white font-bold rounded-xl hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex items-center justify-center gap-3"
+                  disabled={loading}
+                  className={`w-full py-4 bg-gradient-to-r from-amber-600 to-orange-600 text-white font-bold rounded-xl hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex items-center justify-center gap-3 ${loading ? 'opacity-70 cursor-not-allowed' : ''}`}
                 >
-                  Enviar Mensaje
-                  <Send size={20} />
+                  {loading ? (
+                    <>
+                      <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white"></div>
+                      Enviando...
+                    </>
+                  ) : (
+                    <>
+                      Enviar Mensaje
+                      <Send size={20} />
+                    </>
+                  )}
                 </button>
               </form>
             )}
