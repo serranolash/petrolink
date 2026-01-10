@@ -647,81 +647,75 @@ export default function LandingPageExecutive() {
         </div>
       </section>
 
-{/* ================= COMPANIES SECTION (Versión con iconos) ================= */}
-<section id="companies" className="py-16 md:py-24 px-6 bg-gradient-to-b from-white to-amber-50/20">
-  <div className="max-w-7xl mx-auto">
-    <div className="text-center mb-12 md:mb-16">
-      <h3 className="text-2xl md:text-3xl font-bold mb-4">Transnacionales que confían en nosotros</h3>
-      <p className="text-gray-600">Conectamos talento venezolano con los líderes de la industria petrolera global</p>
+{/* ================= COMPANIES SECTION (Minimalista) ================= */}
+<section id="companies" className="py-20 md:py-28 px-6 bg-white">
+  <div className="max-w-6xl mx-auto">
+    <div className="text-center mb-16">
+      <div className="inline-flex items-center gap-2 px-4 py-2 mb-6 rounded-full bg-gradient-to-r from-amber-50 to-orange-50 border border-amber-100">
+        <span className="text-sm font-semibold text-amber-700">ALIANZAS ESTRATÉGICAS</span>
+      </div>
+      <h3 className="text-3xl md:text-4xl font-bold mb-6">Conectamos con líderes globales</h3>
+      <p className="text-gray-600 text-lg max-w-3xl mx-auto">
+        Colaboramos con las principales transnacionales del sector energético 
+        para identificar y posicionar talento venezolano especializado
+      </p>
     </div>
     
-    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 md:gap-8">
-      {/* Schlumberger */}
-      <div className="group relative h-28 bg-gradient-to-br from-white to-blue-50 rounded-xl border border-blue-100 flex flex-col items-center justify-center shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-2 p-4">
-        <div className="w-16 h-16 mb-3 flex items-center justify-center">
-          <div className="text-3xl font-bold text-blue-700">SLB</div>
-        </div>
-        <div className="absolute bottom-2 text-xs text-gray-600 opacity-0 group-hover:opacity-100 transition-opacity">
-          Schlumberger
-        </div>
+    <div className="relative">
+      {/* Fila superior */}
+      <div className="flex flex-wrap justify-center gap-6 md:gap-10 mb-6 md:mb-10">
+        {[
+          { symbol: "SLB", color: "text-blue-700", bg: "bg-blue-50" },
+          { symbol: "H", color: "text-red-600", bg: "bg-red-50" },
+          { symbol: "BKR", color: "text-gray-900", bg: "bg-gray-50" },
+          { symbol: "CVX", color: "text-blue-600", bg: "bg-blue-50" },
+        ].map((company, i) => (
+          <div key={i} className={`${company.bg} w-20 h-20 md:w-24 md:h-24 rounded-2xl flex items-center justify-center shadow-lg hover:shadow-2xl transition-all duration-500 hover:scale-110 hover:rotate-3`}>
+            <div className={`text-2xl md:text-3xl font-bold ${company.color}`}>
+              {company.symbol}
+            </div>
+          </div>
+        ))}
       </div>
-
-      {/* Halliburton */}
-      <div className="group relative h-28 bg-gradient-to-br from-white to-red-50 rounded-xl border border-red-100 flex flex-col items-center justify-center shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-2 p-4">
-        <div className="w-16 h-16 mb-3 flex items-center justify-center">
-          <div className="text-4xl font-bold text-red-600">H</div>
-        </div>
-        <div className="absolute bottom-2 text-xs text-gray-600 opacity-0 group-hover:opacity-100 transition-opacity">
-          Halliburton
-        </div>
+      
+      {/* Fila central */}
+      <div className="flex flex-wrap justify-center gap-6 md:gap-10 mb-6 md:mb-10">
+        {[
+          { symbol: "REP", color: "text-green-600", bg: "bg-green-50" },
+          { symbol: "ENI", color: "text-purple-600", bg: "bg-purple-50" },
+          { symbol: "XOM", color: "text-blue-800", bg: "bg-blue-100" },
+          { symbol: "TTE", color: "text-blue-600", bg: "bg-blue-50" },
+        ].map((company, i) => (
+          <div key={i} className={`${company.bg} w-20 h-20 md:w-24 md:h-24 rounded-2xl flex items-center justify-center shadow-lg hover:shadow-2xl transition-all duration-500 hover:scale-110 hover:-rotate-3`}>
+            <div className={`text-2xl md:text-3xl font-bold ${company.color}`}>
+              {company.symbol}
+            </div>
+          </div>
+        ))}
       </div>
-
-      {/* Baker Hughes */}
-      <div className="group relative h-28 bg-gradient-to-br from-white to-gray-50 rounded-xl border border-gray-200 flex flex-col items-center justify-center shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-2 p-4">
-        <div className="w-16 h-16 mb-3 flex items-center justify-center">
-          <div className="text-2xl font-bold text-gray-900">BKR</div>
-        </div>
-        <div className="absolute bottom-2 text-xs text-gray-600 opacity-0 group-hover:opacity-100 transition-opacity">
-          Baker Hughes
-        </div>
-      </div>
-
-      {/* Chevron */}
-      <div className="group relative h-28 bg-gradient-to-br from-white to-blue-50 rounded-xl border border-blue-100 flex flex-col items-center justify-center shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-2 p-4">
-        <div className="w-16 h-16 mb-3 flex items-center justify-center">
-          <div className="text-3xl font-bold text-blue-600">CVX</div>
-        </div>
-        <div className="absolute bottom-2 text-xs text-gray-600 opacity-0 group-hover:opacity-100 transition-opacity">
-          Chevron
-        </div>
-      </div>
-
-      {/* Repsol */}
-      <div className="group relative h-28 bg-gradient-to-br from-white to-green-50 rounded-xl border border-green-100 flex flex-col items-center justify-center shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-2 p-4">
-        <div className="w-16 h-16 mb-3 flex items-center justify-center">
-          <div className="text-3xl font-bold text-green-600">REP</div>
-        </div>
-        <div className="absolute bottom-2 text-xs text-gray-600 opacity-0 group-hover:opacity-100 transition-opacity">
-          Repsol
-        </div>
-      </div>
-
-      {/* Eni */}
-      <div className="group relative h-28 bg-gradient-to-br from-white to-purple-50 rounded-xl border border-purple-100 flex flex-col items-center justify-center shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-2 p-4">
-        <div className="w-16 h-16 mb-3 flex items-center justify-center">
-          <div className="text-3xl font-bold text-purple-600">ENI</div>
-        </div>
-        <div className="absolute bottom-2 text-xs text-gray-600 opacity-0 group-hover:opacity-100 transition-opacity">
-          Eni
-        </div>
+      
+      {/* Fila inferior */}
+      <div className="flex flex-wrap justify-center gap-6 md:gap-10">
+        {[
+          { symbol: "BP", color: "text-green-700", bg: "bg-green-50" },
+          { symbol: "SHELL", color: "text-yellow-600", bg: "bg-yellow-50" },
+          { symbol: "COP", color: "text-orange-600", bg: "bg-orange-50" },
+          { symbol: "PDVSA", color: "text-red-700", bg: "bg-red-50" },
+        ].map((company, i) => (
+          <div key={i} className={`${company.bg} w-20 h-20 md:w-24 md:h-24 rounded-2xl flex items-center justify-center shadow-lg hover:shadow-2xl transition-all duration-500 hover:scale-110 hover:rotate-3`}>
+            <div className={`text-xl md:text-2xl font-bold ${company.color}`}>
+              {company.symbol}
+            </div>
+          </div>
+        ))}
       </div>
     </div>
     
-    {/* Línea decorativa */}
-    <div className="mt-12 pt-8 border-t border-gray-200">
-      <p className="text-center text-gray-500 text-sm max-w-2xl mx-auto">
-        Trabajamos con las principales empresas de servicios petroleros y operadoras 
-        internacionales para posicionar el talento venezolano en proyectos energéticos globales
+    <div className="mt-16 text-center">
+      <div className="inline-block h-px w-32 bg-gradient-to-r from-transparent via-amber-500 to-transparent"></div>
+      <p className="mt-8 text-gray-500 text-sm italic max-w-2xl mx-auto">
+        Estas representaciones simbólicas corresponden a los tickers bursátiles 
+        de empresas líderes en el sector energético con las que mantenemos relaciones profesionales
       </p>
     </div>
   </div>
@@ -1093,7 +1087,7 @@ export default function LandingPageExecutive() {
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                       </svg>
-                      <span className="text-xs text-gray-400">Caracas, Venezuela</span>
+                      <span className="text-xs text-gray-400">Buenos Aires, Argentina</span>
                     </div>
                     <div className="flex items-center gap-2 mt-1">
                       <svg className="w-3 h-3 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -1174,7 +1168,7 @@ export default function LandingPageExecutive() {
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                       </svg>
-                      <span className="text-xs text-gray-400">Miami, USA</span>
+                      <span className="text-xs text-gray-400">Buenos Aires Argentina</span>
                     </div>
                     <div className="flex items-center gap-2 mt-1">
                       <svg className="w-3 h-3 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
