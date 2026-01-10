@@ -664,8 +664,8 @@ export default function LandingPageExecutive() {
         </div>
       </section>
 
-{/* ================= COMPANIES SECTION (Minimalista) ================= */}
-<section id="companies" className="py-20 md:py-28 px-6 bg-white">
+{/* ================= COMPANIES SECTION (Blindada) ================= */}
+<section id="companies" className="py-20 md:py-28 px-6 bg-gray-50">
   <div className="max-w-6xl mx-auto">
     <div className="text-center mb-16">
       <div className="inline-flex items-center gap-2 px-4 py-2 mb-6 rounded-full bg-gradient-to-r from-amber-50 to-orange-50 border border-amber-100">
@@ -674,70 +674,45 @@ export default function LandingPageExecutive() {
       <h3 className="text-3xl md:text-4xl font-bold mb-6">Conectamos con líderes globales</h3>
       <p className="text-gray-600 text-lg max-w-3xl mx-auto">
         Colaboramos con las principales transnacionales del sector energético 
-        para identificar y posicionar talento venezolano especializado
+        para posicionar talento venezolano especializado.
       </p>
     </div>
     
-    <div className="relative">
-      {/* Fila superior */}
-      <div className="flex flex-wrap justify-center gap-6 md:gap-10 mb-6 md:mb-10">
-        {[
-          { symbol: "SLB", color: "text-blue-700", bg: "bg-blue-50" },
-          { symbol: "H", color: "text-red-600", bg: "bg-red-50" },
-          { symbol: "BKR", color: "text-gray-900", bg: "bg-gray-50" },
-          { symbol: "CVX", color: "text-blue-600", bg: "bg-blue-50" },
-        ].map((company, i) => (
-          <div key={i} className={`${company.bg} w-20 h-20 md:w-24 md:h-24 rounded-2xl flex items-center justify-center shadow-lg hover:shadow-2xl transition-all duration-500 hover:scale-110 hover:rotate-3`}>
-            <div className={`text-2xl md:text-3xl font-bold ${company.color}`}>
-              {company.symbol}
-            </div>
-          </div>
-        ))}
-      </div>
-      
-      {/* Fila central */}
-      <div className="flex flex-wrap justify-center gap-6 md:gap-10 mb-6 md:mb-10">
-        {[
-          { symbol: "REP", color: "text-green-600", bg: "bg-green-50" },
-          { symbol: "ENI", color: "text-purple-600", bg: "bg-purple-50" },
-          { symbol: "XOM", color: "text-blue-800", bg: "bg-blue-100" },
-          { symbol: "TTE", color: "text-blue-600", bg: "bg-blue-50" },
-        ].map((company, i) => (
-          <div key={i} className={`${company.bg} w-20 h-20 md:w-24 md:h-24 rounded-2xl flex items-center justify-center shadow-lg hover:shadow-2xl transition-all duration-500 hover:scale-110 hover:-rotate-3`}>
-            <div className={`text-2xl md:text-3xl font-bold ${company.color}`}>
-              {company.symbol}
-            </div>
-          </div>
-        ))}
-      </div>
-      
-      {/* Fila inferior */}
-      <div className="flex flex-wrap justify-center gap-6 md:gap-10">
-        {[
-          { symbol: "BP", color: "text-green-700", bg: "bg-green-50" },
-          { symbol: "SHELL", color: "text-yellow-600", bg: "bg-yellow-50" },
-          { symbol: "COP", color: "text-orange-600", bg: "bg-orange-50" },
-          { symbol: "PDVSA", color: "text-red-700", bg: "bg-red-50" },
-        ].map((company, i) => (
-          <div key={i} className={`${company.bg} w-20 h-20 md:w-24 md:h-24 rounded-2xl flex items-center justify-center shadow-lg hover:shadow-2xl transition-all duration-500 hover:scale-110 hover:rotate-3`}>
-            <div className={`text-xl md:text-2xl font-bold ${company.color}`}>
-              {company.symbol}
-            </div>
-          </div>
-        ))}
-      </div>
-    </div>
-    
-    <div className="mt-16 text-center">
-      <div className="inline-block h-px w-32 bg-gradient-to-r from-transparent via-amber-500 to-transparent"></div>
-      <p className="mt-8 text-gray-500 text-sm italic max-w-2xl mx-auto">
-        Estas representaciones simbólicas corresponden a los tickers bursátiles 
-        de empresas líderes en el sector energético con las que mantenemos relaciones profesionales
-      </p>
+    <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-10">
+      {[
+        { name: "SLB", logo: "/logos/slb.png", fallback: "SLB" },
+        { name: "Halliburton", logo: "/logos/halliburton.png", fallback: "H" },
+        { name: "Baker Hughes", logo: "/logos/bkr.png", fallback: "BKR" },
+        { name: "Chevron", logo: "/logos/chevron.png", fallback: "CVX" },
+        { name: "Repsol", logo: "/logos/repsol.png", fallback: "REP" },
+        { name: "Eni", logo: "/logos/eni.png", fallback: "ENI" },
+        { name: "ExxonMobil", logo: "/logos/exxon.png", fallback: "XOM" },
+        { name: "TotalEnergies", logo: "/logos/total.png", fallback: "TTE" },
+        { name: "BP", logo: "/logos/bp.png", fallback: "BP" },
+        { name: "Shell", logo: "/logos/shell.png", fallback: "SHELL" },
+        { name: "ConocoPhillips", logo: "/logos/conocophillips.png", fallback: "COP" },
+        { name: "PDVSA", logo: "/logos/pdvsa.png", fallback: "PDVSA" },
+      ].map((company, i) => (
+        <div key={i} className="bg-white w-full h-28 md:h-36 rounded-2xl flex items-center justify-center p-4 shadow-sm hover:shadow-lg transition-all border border-gray-100 group relative overflow-hidden">
+          
+          {/* La imagen intentará cargar desde tu carpeta local /public/logos/ */}
+          <img 
+            src={company.logo} 
+            alt={company.name} 
+            className="max-w-full max-h-full object-contain transition-all z-10"
+            onError={(e) => { e.target.style.display = 'none'; }} // Si falla, se esconde
+          />
+
+          {/* Texto de respaldo que aparece solo si la imagen no carga o está detrás */}
+          <span className="absolute inset-0 flex items-center justify-center text-xl font-bold text-gray-300 group-hover:text-amber-600 transition-colors z-0">
+            {company.fallback}
+          </span>
+          
+        </div>
+      ))}
     </div>
   </div>
 </section>
-
       {/* ================= FORM SECTION ================= */}
       <section ref={formRef} className="py-20 md:py-32 px-6 bg-gradient-to-br from-gray-900 to-gray-950">
         <div className="max-w-4xl mx-auto">
