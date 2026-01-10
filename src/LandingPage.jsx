@@ -646,9 +646,8 @@ export default function LandingPageExecutive() {
           </div>
         </div>
       </section>
-      
 
-      {/* ================= COMPANIES SECTION (Versión con iconos) ================= */}
+{/* ================= COMPANIES SECTION (Versión con iconos) ================= */}
 <section id="companies" className="py-16 md:py-24 px-6 bg-gradient-to-b from-white to-amber-50/20">
   <div className="max-w-7xl mx-auto">
     <div className="text-center mb-12 md:mb-16">
@@ -1049,138 +1048,190 @@ export default function LandingPageExecutive() {
           </div>
         </div>
       </section>
-
       {/* ================= FOOTER ================= */}
-      <footer className="py-12 md:py-16 px-6 bg-gray-950 text-gray-400">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12 mb-8 md:mb-12">
-            <div>
+      <footer className="bg-gradient-to-br from-gray-900 to-gray-950 text-white">
+        <div className="max-w-7xl mx-auto px-6 py-12 md:py-16">
+          <div className="grid md:grid-cols-4 gap-8 md:gap-12">
+            
+            {/* Logo y descripción */}
+            <div className="md:col-span-1">
               <div className="flex items-center gap-3 mb-6">
-                <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-amber-600 to-orange-700 flex items-center justify-center">
-                  <Zap className="text-white" size={20} />
+                <div className="w-12 h-12 rounded-lg bg-gradient-to-r from-amber-600 to-orange-600 flex items-center justify-center">
+                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                  </svg>
                 </div>
-                <div className="text-xl font-bold text-white">PETROLINK<br /><span className="text-amber-400">VENEZUELA</span></div>
+                <div>
+                  <div className="text-xl font-bold">PETROLINK</div>
+                  <div className="text-sm text-amber-400">VENEZUELA</div>
+                </div>
               </div>
-              <p className="text-sm text-gray-500">
-                Especialistas en reinserción del talento petrolero venezolano. Conectamos experiencia internacional con las oportunidades de la apertura energética.
+              <p className="text-gray-400 text-sm">
+                Especialistas en la reinserción del talento petrolero venezolano 
+                en la industria energética global.
               </p>
             </div>
-            
+
+            {/* Equipo Directivo */}
             <div>
-              <h4 className="text-white font-semibold mb-6">Para Especialistas</h4>
-              <ul className="space-y-3">
-                <li><Link to="/servicios" className="hover:text-amber-400 transition">Proceso de Reinserción</Link></li>
-                <li><Link to="/headhunting-ejecutivo" className="hover:text-amber-400 transition">Posiciones Disponibles</Link></li>
-                <li><Link to="/contacto" className="hover:text-amber-400 transition">Preguntas Frecuentes</Link></li>
-              </ul>
-            </div>
-            
-            <div>
-  <h4 className="text-white font-semibold mb-6">Equipo Directivo</h4>
-  <ul className="space-y-4">
-    
-    {/* Información de Marielvis */}
-    <li className="flex items-start gap-2">
-      <div className="w-8 h-8 rounded-full bg-amber-500/20 flex items-center justify-center flex-shrink-0">
-        <Mail size={14} className="text-amber-400" />
-      </div>
-      <div>
-        <div className="font-medium text-white">LIC. MARIELVIS MALAVE FARIAS</div>
-        <div className="text-sm text-amber-300">Directora de Talento Humano</div>
-        <div className="text-xs text-gray-400 mt-1">Licenciada en Administración de Recursos Humanos</div>
-        <div className="flex items-center gap-2 mt-1">
-          <Phone size={12} className="text-gray-400" />
-          
-        </div>
-        <div className="flex items-center gap-2 mt-1">
-          <Mail size={12} className="text-gray-400" />
-          <span className="text-xs text-gray-400">semalav14@gmail.com</span>
-        </div>
-      </div>
-    </li>
-    
-    {/* Información de Alex */}
-    <li className="flex items-start gap-2">
-      <div className="w-8 h-8 rounded-full bg-blue-500/20 flex items-center justify-center flex-shrink-0">
-        <svg className="w-4 h-4 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
-        </svg>
-      </div>
+              <h4 className="text-white font-semibold mb-6">Equipo Directivo</h4>
+              <ul className="space-y-4">
+                
+                {/* Marielvis Malave */}
+                <li className="flex items-start gap-2">
+                  <div className="w-8 h-8 rounded-full bg-amber-500/20 flex items-center justify-center flex-shrink-0">
+                    <svg className="w-4 h-4 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                    </svg>
+                  </div>
                   <div>
-                    <div className="font-medium text-white">ING. ALEX SERRANO LASHLEY</div>
-                    <div className="text-sm text-blue-300">Director Tecnológico & Validador de Información</div>
-                    <div className="text-xs text-gray-400 mt-1">Ingeniero de Sistemas</div>
+                    <div className="font-medium text-white">LIC. MARIELVIS MALAVE FARIAS</div>
+                    <div className="text-sm text-amber-300">Directora de Talento Humano</div>
+                    <div className="text-xs text-gray-400 mt-1">Lic. en Administración de Recursos Humanos</div>
                     <div className="flex items-center gap-2 mt-1">
-                      <Phone size={12} className="text-gray-400" />
-                      
+                      <svg className="w-3 h-3 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                      </svg>
+                      <span className="text-xs text-gray-400">Caracas, Venezuela</span>
                     </div>
                     <div className="flex items-center gap-2 mt-1">
-                      <Mail size={12} className="text-gray-400" />
-                      <span className="text-xs text-gray-400">serranolash@gmail.com</span>
+                      <svg className="w-3 h-3 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                      </svg>
+                      <span className="text-xs text-gray-400">marielvis@petrolinkvzla.com</span>
+                    </div>
+                  </div>
+                </li>
+                
+                {/* Mabel Rodriguez */}
+                <li className="flex items-start gap-2">
+                  <div className="w-8 h-8 rounded-full bg-green-500/20 flex items-center justify-center flex-shrink-0">
+                    <svg className="w-4 h-4 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <div className="font-medium text-white">LIC. MABEL RODRÍGUEZ</div>
+                    <div className="text-sm text-green-300">Directora Zona Capital & Coach Ontológica</div>
+                    <div className="text-xs text-gray-400 mt-1">Lic. en Administración • Master Coach Ontológica</div>
+                    <div className="flex items-center gap-2 mt-1">
+                      <svg className="w-3 h-3 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                      </svg>
+                      <span className="text-xs text-gray-400">Caracas, Venezuela</span>
+                    </div>
+                    <div className="flex items-center gap-2 mt-1">
+                      <svg className="w-3 h-3 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                      </svg>
+                      <span className="text-xs text-gray-400">mabel.rodriguez@petrolinkvzla.com</span>
+                    </div>
+                  </div>
+                </li>
+                
+                {/* Alexis Anes Pulido */}
+                <li className="flex items-start gap-2">
+                  <div className="w-8 h-8 rounded-full bg-blue-500/20 flex items-center justify-center flex-shrink-0">
+                    <svg className="w-4 h-4 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <div className="font-medium text-white">LIC. ALEXIS ANES PULIDO</div>
+                    <div className="text-sm text-blue-300">Director Zona Oriente & Gestión de Personal</div>
+                    <div className="text-xs text-gray-400 mt-1">Lic. en Administración de Personal</div>
+                    <div className="flex items-center gap-2 mt-1">
+                      <svg className="w-3 h-3 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                      </svg>
+                      <span className="text-xs text-gray-400">Anzoátegui, Venezuela</span>
+                    </div>
+                    <div className="flex items-center gap-2 mt-1">
+                      <svg className="w-3 h-3 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                      </svg>
+                      <span className="text-xs text-gray-400">alexis.anes@petrolinkvzla.com</span>
+                    </div>
+                  </div>
+                </li>
+                
+                {/* Alex Serrano */}
+                <li className="flex items-start gap-2">
+                  <div className="w-8 h-8 rounded-full bg-purple-500/20 flex items-center justify-center flex-shrink-0">
+                    <svg className="w-4 h-4 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
+                    </svg>
+                  </div>
+                  <div>
+                    <div className="font-medium text-white">ING. ALEX SERRANO LASHLEY</div>
+                    <div className="text-sm text-purple-300">Director Tecnológico & Validador de Información</div>
+                    <div className="text-xs text-gray-400 mt-1">Ingeniero de Sistemas</div>
+                    <div className="flex items-center gap-2 mt-1">
+                      <svg className="w-3 h-3 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                      </svg>
+                      <span className="text-xs text-gray-400">Miami, USA</span>
+                    </div>
+                    <div className="flex items-center gap-2 mt-1">
+                      <svg className="w-3 h-3 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                      </svg>
+                      <span className="text-xs text-gray-400">alex.serrano@petrolinkvzla.com</span>
                     </div>
                   </div>
                 </li>
                 
                 {/* Ubicaciones */}
                 <li className="flex items-center gap-2 pt-4 border-t border-gray-800">
-                  <MapPin size={16} className="text-gray-400" />
+                  <svg className="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                  </svg>
                   <div>
                     <span className="text-sm text-gray-300">Oficinas Operativas:</span>
-                    <div className="text-xs text-gray-400">Buenos Aires • Caracas • Miami</div>
+                    <div className="text-xs text-gray-400">Caracas • Anzoátegui • Miami</div>
                   </div>
                 </li>
                 
               </ul>
             </div>
 
-             {/* Información de Alex */}
-    <li className="flex items-start gap-2">
-      <div className="w-8 h-8 rounded-full bg-blue-500/20 flex items-center justify-center flex-shrink-0">
-        <svg className="w-4 h-4 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
-        </svg>
-      </div>
-                  <div>
-                    <div className="font-medium text-white">Lic. Mabel Rodriguez</div>
-                    <div className="text-sm text-blue-300">Director Tecnológico & Validador de Información</div>
-                    <div className="text-xs text-gray-400 mt-1">Ingeniero de Sistemas</div>
-                    <div className="flex items-center gap-2 mt-1">
-                      <Phone size={12} className="text-gray-400" />
-                      
-                    </div>
-                    <div className="flex items-center gap-2 mt-1">
-                      <Mail size={12} className="text-gray-400" />
-                      <span className="text-xs text-gray-400">serranolash@gmail.com</span>
-                    </div>
-                  </div>
-                </li>
-                
-                {/* Ubicaciones */}
-                <li className="flex items-center gap-2 pt-4 border-t border-gray-800">
-                  <MapPin size={16} className="text-gray-400" />
-                  <div>
-                    <span className="text-sm text-gray-300">Oficinas Operativas:</span>
-                    <div className="text-xs text-gray-400">Buenos Aires • Caracas • Miami</div>
-                  </div>
-                </li>
-                
-              </ul>
-            </div>
-            
-                        
+            {/* Enlaces rápidos */}
             <div>
-              <h4 className="text-white font-semibold mb-6">Legal</h4>
-              <ul className="space-y-3">
-                <li><Link to="/politica-privacidad" className="hover:text-amber-400 transition">Confidencialidad</Link></li>
-                <li><Link to="/terminos-servicio" className="hover:text-amber-400 transition">Términos del Servicio</Link></li>
-                <li><Link to="/gdpr-compliance" className="hover:text-amber-400 transition">Protección de Datos</Link></li>
+              <h4 className="font-bold mb-4">Enlaces Rápidos</h4>
+              <ul className="space-y-2">
+                <li><a href="#hero" className="text-gray-400 hover:text-amber-400 transition">Inicio</a></li>
+                <li><a href="#about" className="text-gray-400 hover:text-amber-400 transition">Nosotros</a></li>
+                <li><a href="#process" className="text-gray-400 hover:text-amber-400 transition">Proceso</a></li>
+                <li><a href="#companies" className="text-gray-400 hover:text-amber-400 transition">Alianzas</a></li>
+                <li><Link to="/contacto" className="text-gray-400 hover:text-amber-400 transition">Contacto</Link></li>
               </ul>
             </div>
+
+            {/* Legal */}
+            <div>
+              <h4 className="font-bold mb-4">Legal</h4>
+              <ul className="space-y-2 text-gray-400">
+                <li><a href="#" className="hover:text-amber-400 transition">Términos y Condiciones</a></li>
+                <li><a href="#" className="hover:text-amber-400 transition">Política de Privacidad</a></li>
+                <li><a href="#" className="hover:text-amber-400 transition">Confidencialidad</a></li>
+                <li><a href="#" className="hover:text-amber-400 transition">Protección de Datos</a></li>
+              </ul>
+            </div>
+
           </div>
-          
-          <div className="pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-sm text-center md:text-left">© 2026 PETROLINK VENEZUELA. Todos los derechos reservados.</p>
-            <p className="text-sm text-center md:text-right">El Retorno de los Especialistas • Oil & Gas • Reinserción Profesional</p>
+
+          {/* Copyright */}
+          <div className="pt-8 border-t border-gray-800 mt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+            <p className="text-gray-500 text-sm">
+              © {new Date().getFullYear()} Petrolink Venezuela. Todos los derechos reservados.
+            </p>
+            <p className="text-sm text-amber-400 font-medium">
+              El Retorno de los Especialistas • Oil & Gas • Reinserción Internacional
+            </p>
           </div>
         </div>
       </footer>
