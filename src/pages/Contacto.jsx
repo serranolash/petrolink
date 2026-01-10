@@ -302,7 +302,7 @@ export default function Contacto() {
                         <div className="text-gray-400 text-sm">Correo profesional</div>
                         <a href="mailto:marielvis.malave@petrolinkvzla.com" 
                            className="text-white hover:text-amber-300 transition font-medium">
-                          marielvi@petrolinkvzla.com
+                          marielvis@petrolinkvzla.com
                         </a>
                       </div>
                     </div>
