@@ -305,39 +305,12 @@ export default function Contacto() {
                         <div className="text-gray-400 text-sm">Correo personal</div>
                         <a href="mailto:marielvismalave@gmail.com" 
                            className="text-white hover:text-amber-300 transition font-medium">
-                          marielvismalave@gmail.com
+                          marielvis.malave@petrolinkvzla.com
                         </a>
                       </div>
                     </div>
                     
-                    <div className="flex items-center gap-3">
-                      <Phone size={18} className="text-gray-400" />
-                      <div>
-                        <div className="text-gray-400 text-sm">WhatsApp directo</div>
-                        <a href="https://wa.me/541155048485" target="_blank" rel="noopener noreferrer"
-                           className="text-white hover:text-green-300 transition font-medium">
-                          +54 1155048485
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                
-                {/* Soporte Técnico */}
-                <div className="bg-gray-800/50 rounded-xl p-5 border border-gray-700">
-                  <div className="flex items-center gap-3 mb-4">
-                    <Users className="text-blue-400" size={20} />
-                    <div className="font-bold">Soporte Técnico</div>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <Phone size={18} className="text-gray-400" />
-                    <a href="https://wa.me/541159121384" target="_blank" rel="noopener noreferrer"
-                       className="text-blue-300 hover:text-blue-200 transition">
-                      +54 1159121384
-                    </a>
-                    <span className="text-xs text-green-400 bg-green-900/30 px-2 py-1 rounded">WhatsApp</span>
-                  </div>
-                </div>
+                    
                 
                 {/* Horario */}
                 <div className="flex items-center gap-4 p-4 bg-amber-900/20 rounded-xl border border-amber-800/30">
