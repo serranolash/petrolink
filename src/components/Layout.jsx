@@ -1,4 +1,4 @@
-// src/components/Layout.jsx
+// src/components/Layout.jsx - CORREGIDO (sin rayas duplicadas)
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { 
@@ -12,8 +12,8 @@ export default function Layout({ children, title, subtitle }) {
 
   return (
     <div className="font-sans bg-white text-gray-900 antialiased min-h-screen">
-      {/* Header/Navbar */}
-      <nav className="sticky top-0 w-full z-50 bg-white/95 backdrop-blur-xl border-b border-gray-100 shadow-sm">
+      {/* Header/Navbar - QUITÉ EL BORDER DUPLICADO */}
+      <nav className="sticky top-0 w-full z-50 bg-white/95 backdrop-blur-xl shadow-sm">
         <div className="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
           <div className="flex items-center gap-2">
             <button 
@@ -71,7 +71,7 @@ export default function Layout({ children, title, subtitle }) {
         )}
       </nav>
 
-      {/* Page Header */}
+      {/* Page Header - ELIMINÉ EL BORDER QUE CAUSABA LA RAYA */}
       <div className="bg-gradient-to-br from-amber-50 to-orange-50 py-20 px-6">
         <div className="max-w-7xl mx-auto">
           <button 
@@ -93,11 +93,11 @@ export default function Layout({ children, title, subtitle }) {
         </div>
       </main>
 
-      {/* Footer */}
+      {/* Footer - MODIFIQUÉ EL FOOTER PARA QUITAR BORDES DUPLICADOS */}
       <footer className="py-16 px-6 bg-gray-950 text-gray-400 mt-20">
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-4 gap-12 mb-12">
-            {/* Logo y descripción */}
+            {/* Logo y descripción - ELIMINÉ BORDER */}
             <div>
               <div className="flex items-center gap-3 mb-6">
                 <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-amber-600 to-orange-700 flex items-center justify-center">
@@ -115,7 +115,7 @@ export default function Layout({ children, title, subtitle }) {
               </p>
             </div>
             
-            {/* Enlaces rápidos */}
+            {/* Enlaces rápidos - ELIMINÉ BORDER */}
             <div>
               <h4 className="text-white font-semibold mb-6">Para Especialistas</h4>
               <ul className="space-y-3">
@@ -125,13 +125,13 @@ export default function Layout({ children, title, subtitle }) {
               </ul>
             </div>
             
-            {/* Equipo Directivo */}
+            {/* Equipo Directivo - SIMPLIFIQUE LOS BORDES */}
             <div>
               <h4 className="text-white font-semibold mb-6">Equipo Directivo</h4>
               <ul className="space-y-4">
                 
                 {/* Marielvis Malave */}
-                <li className="group bg-gray-900/40 rounded-xl p-4 hover:bg-gray-800/60 transition-all duration-300 border border-gray-800 hover:border-amber-800/50">
+                <li className="group bg-gray-900/40 rounded-xl p-4 hover:bg-gray-800/60 transition-all duration-300">
                   <div className="flex items-center gap-3">
                     <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-amber-600/20 to-orange-700/20 flex items-center justify-center group-hover:scale-110 transition-transform">
                       <Mail size={18} className="text-amber-400" />
@@ -152,7 +152,7 @@ export default function Layout({ children, title, subtitle }) {
                 </li>
                 
                 {/* Mabel Rodríguez */}
-                <li className="group bg-gray-900/40 rounded-xl p-4 hover:bg-gray-800/60 transition-all duration-300 border border-gray-800 hover:border-green-800/50">
+                <li className="group bg-gray-900/40 rounded-xl p-4 hover:bg-gray-800/60 transition-all duration-300">
                   <div className="flex items-center gap-3">
                     <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-green-600/20 to-emerald-700/20 flex items-center justify-center group-hover:scale-110 transition-transform">
                       <svg className="w-4 h-4 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -175,7 +175,7 @@ export default function Layout({ children, title, subtitle }) {
                 </li>
                 
                 {/* Alexis Anes Pulido */}
-                <li className="group bg-gray-900/40 rounded-xl p-4 hover:bg-gray-800/60 transition-all duration-300 border border-gray-800 hover:border-blue-800/50">
+                <li className="group bg-gray-900/40 rounded-xl p-4 hover:bg-gray-800/60 transition-all duration-300">
                   <div className="flex items-center gap-3">
                     <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-blue-600/20 to-cyan-700/20 flex items-center justify-center group-hover:scale-110 transition-transform">
                       <svg className="w-4 h-4 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -198,7 +198,7 @@ export default function Layout({ children, title, subtitle }) {
                 </li>
                 
                 {/* Alex Serrano */}
-                <li className="group bg-gray-900/40 rounded-xl p-4 hover:bg-gray-800/60 transition-all duration-300 border border-gray-800 hover:border-purple-800/50">
+                <li className="group bg-gray-900/40 rounded-xl p-4 hover:bg-gray-800/60 transition-all duration-300">
                   <div className="flex items-center gap-3">
                     <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-purple-600/20 to-violet-700/20 flex items-center justify-center group-hover:scale-110 transition-transform">
                       <svg className="w-4 h-4 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -222,15 +222,15 @@ export default function Layout({ children, title, subtitle }) {
                 
               </ul>
               
-              {/* Horario */}
-              <div className="mt-6 p-3 bg-amber-900/10 rounded-lg border border-amber-800/30">
+              {/* Horario - SIMPLIFIQUE BORDER */}
+              <div className="mt-6 p-3 bg-amber-900/10 rounded-lg">
                 <p className="text-xs text-amber-200 text-center">
                   <span className="font-semibold">Horario:</span> L-V 9:00-18:00 • Respuesta en 24h
                 </p>
               </div>
             </div>
             
-            {/* Legal */}
+            {/* Legal - SIN BORDER */}
             <div>
               <h4 className="text-white font-semibold mb-6">Legal</h4>
               <ul className="space-y-3">
@@ -239,8 +239,8 @@ export default function Layout({ children, title, subtitle }) {
                 <li><Link to="/gdpr-compliance" className="hover:text-amber-400 transition">Protección de Datos</Link></li>
               </ul>
               
-              {/* Redes Sociales */}
-              <div className="mt-8 pt-6 border-t border-gray-800">
+              {/* Redes Sociales - SIN BORDER */}
+              <div className="mt-8 pt-6">
                 <h5 className="text-white font-semibold mb-4">Síguenos</h5>
                 <div className="flex gap-3">
                   <a href="#" className="w-10 h-10 rounded-lg bg-gray-800 hover:bg-amber-900/30 flex items-center justify-center transition">
@@ -261,8 +261,8 @@ export default function Layout({ children, title, subtitle }) {
             </div>
           </div>
           
-          {/* Copyright */}
-          <div className="pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center gap-4">
+          {/* Copyright - MODIFIQUÉ EL BORDER */}
+          <div className="pt-8 mt-8 flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-sm text-gray-500">
               © {new Date().getFullYear()} Petrolink Venezuela. Todos los derechos reservados.
             </p>

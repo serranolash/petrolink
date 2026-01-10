@@ -1,4 +1,4 @@
-// src/pages/Contacto.jsx
+// src/pages/Contacto.jsx - CORREGIDO (sin teléfonos en oficinas)
 import React, { useState } from 'react';
 import Layout from '../components/Layout';
 import { Mail, Phone, MapPin, Clock, MessageSquare, Send, CheckCircle2, Users, Zap, User, Building } from 'lucide-react';
@@ -22,21 +22,18 @@ export default function Contacto() {
     {
       city: "Caracas, Venezuela",
       address: "Centro Financiero Confinanzas",
-      phone: "+58 412-PETROLINK",
       type: "Sede Operativa",
       color: "from-amber-50 to-amber-100"
     },
     {
       city: "Buenos Aires, Argentina",
       address: "Recoleta, Oficina Corporativa",
-      phone: "+54 1159121384",
       type: "Sede Central",
       color: "from-blue-50 to-cyan-100"
     },
     {
       city: "Miami, USA",
       address: "Brickell Avenue, Suite 850",
-      phone: "+1 (786) 555-4892",
       type: "Enlace Internacional",
       color: "from-green-50 to-emerald-100"
     }
@@ -213,7 +210,7 @@ export default function Contacto() {
                         onChange={handleChange}
                         required 
                         className="w-full pl-12 pr-4 py-3 rounded-lg border border-gray-300 focus:border-amber-500 focus:ring-2 focus:ring-amber-200 transition"
-                        placeholder="+58 412-XXX-XXXX"
+                        placeholder="(Opcional) +58 412-XXX-XXXX"
                       />
                     </div>
                   </div>
@@ -313,8 +310,8 @@ export default function Contacto() {
                     <div className="flex items-center gap-3">
                       <Phone size={18} className="text-gray-400" />
                       <div>
-                        <div className="text-gray-400 text-sm">Teléfono directo</div>
-                        <div className="text-white font-medium">Disponible por correo</div>
+                        <div className="text-gray-400 text-sm">Contacto telefónico</div>
+                        <div className="text-white font-medium">Coordinado por correo</div>
                       </div>
                     </div>
                   </div>
@@ -331,7 +328,7 @@ export default function Contacto() {
               </div>
             </div>
 
-            {/* Oficinas */}
+            {/* Oficinas - SIN TELÉFONOS */}
             <div>
               <h3 className="text-2xl font-bold mb-6">Oficinas Operativas</h3>
               <div className="space-y-4">
@@ -354,8 +351,8 @@ export default function Contacto() {
                         {office.address}
                       </div>
                       <div className="flex items-center gap-2">
-                        <Phone size={14} className="text-gray-500" />
-                        {office.phone}
+                        <Mail size={14} className="text-gray-500" />
+                        <span className="text-gray-600">Contacto por email</span>
                       </div>
                     </div>
                   </div>
