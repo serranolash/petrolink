@@ -646,31 +646,124 @@ export default function LandingPageExecutive() {
           </div>
         </div>
       </section>
-
-      {/* ================= COMPANIES SECTION ================= */}
-      <section id="companies" className="py-16 md:py-24 px-6 bg-gradient-to-b from-white to-amber-50/20">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-12 md:mb-16">
-            <h3 className="text-2xl md:text-3xl font-bold mb-4">Transnacionales que confían en nosotros</h3>
-            <p className="text-gray-600">Conectamos talento venezolano con los líderes de la industria petrolera global</p>
-          </div>
-          
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 md:gap-8">
-            {[
-              "Schlumberger",
-              "Halliburton",
-              "Baker Hughes",
-              "Chevron",
-              "Repsol",
-              "Eni"
-            ].map((company, i) => (
-              <div key={i} className="h-20 md:h-24 bg-white rounded-xl border border-gray-100 flex items-center justify-center shadow-sm hover:shadow-md transition-shadow p-4">
-                <div className="text-lg md:text-xl font-bold text-gray-800 text-center">{company}</div>
-              </div>
-            ))}
-          </div>
+{/* ================= COMPANIES SECTION ================= */}
+<section id="companies" className="py-16 md:py-24 px-6 bg-gradient-to-b from-white to-amber-50/20">
+  <div className="max-w-7xl mx-auto">
+    <div className="text-center mb-12 md:mb-16">
+      <h3 className="text-2xl md:text-3xl font-bold mb-4">Transnacionales que confían en nosotros</h3>
+      <p className="text-gray-600">Conectamos talento venezolano con los líderes de la industria petrolera global</p>
+    </div>
+    
+    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 md:gap-8">
+      {/* Schlumberger - SLB */}
+      <div className="group h-20 md:h-24 bg-white rounded-xl border border-gray-100 flex items-center justify-center shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1 p-4">
+        <div className="text-center">
+          <div className="text-2xl md:text-3xl font-bold text-blue-600 mb-1">SLB</div>
+          <div className="text-xs text-gray-500 opacity-0 group-hover:opacity-100 transition-opacity">Schlumberger</div>
         </div>
-      </section>
+      </div>
+
+      {/* Halliburton - H */}
+      <div className="group h-20 md:h-24 bg-white rounded-xl border border-gray-100 flex items-center justify-center shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1 p-4">
+        <div className="text-center">
+          <div className="text-2xl md:text-3xl font-bold text-red-600 mb-1">H</div>
+          <div className="text-xs text-gray-500 opacity-0 group-hover:opacity-100 transition-opacity">Halliburton</div>
+        </div>
+      </div>
+
+      {/* Baker Hughes - BKR */}
+      <div className="group h-20 md:h-24 bg-white rounded-xl border border-gray-100 flex items-center justify-center shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1 p-4">
+        <div className="text-center">
+          <div className="text-2xl md:text-3xl font-bold text-black mb-1">BKR</div>
+          <div className="text-xs text-gray-500 opacity-0 group-hover:opacity-100 transition-opacity">Baker Hughes</div>
+        </div>
+      </div>
+
+      {/* Chevron - CVX */}
+      <div className="group h-20 md:h-24 bg-white rounded-xl border border-gray-100 flex items-center justify-center shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1 p-4">
+        <div className="text-center">
+          <div className="text-2xl md:text-3xl font-bold text-blue-500 mb-1">CVX</div>
+          <div className="text-xs text-gray-500 opacity-0 group-hover:opacity-100 transition-opacity">Chevron</div>
+        </div>
+      </div>
+
+      {/* Repsol - REP */}
+      <div className="group h-20 md:h-24 bg-white rounded-xl border border-gray-100 flex items-center justify-center shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1 p-4">
+        <div className="text-center">
+          <div className="text-2xl md:text-3xl font-bold text-green-600 mb-1">REP</div>
+          <div className="text-xs text-gray-500 opacity-0 group-hover:opacity-100 transition-opacity">Repsol</div>
+        </div>
+      </div>
+
+      {/* Eni - ENI */}
+      <div className="group h-20 md:h-24 bg-white rounded-xl border border-gray-100 flex items-center justify-center shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1 p-4">
+        <div className="text-center">
+          <div className="text-2xl md:text-3xl font-bold text-purple-600 mb-1">ENI</div>
+          <div className="text-xs text-gray-500 opacity-0 group-hover:opacity-100 transition-opacity">Eni</div>
+        </div>
+      </div>
+    </div>
+    
+    {/* Más compañías adicionales */}
+    <div className="mt-8 grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4 md:gap-6">
+      {/* ExxonMobil - XOM */}
+      <div className="group h-16 md:h-20 bg-white rounded-xl border border-gray-100 flex items-center justify-center shadow-sm hover:shadow-md transition-all duration-300 p-3">
+        <div className="text-center">
+          <div className="text-xl font-bold text-blue-800 mb-1">XOM</div>
+          <div className="text-[10px] text-gray-500 opacity-0 group-hover:opacity-100 transition-opacity">ExxonMobil</div>
+        </div>
+      </div>
+
+      {/* Shell - SHELL */}
+      <div className="group h-16 md:h-20 bg-white rounded-xl border border-gray-100 flex items-center justify-center shadow-sm hover:shadow-md transition-all duration-300 p-3">
+        <div className="text-center">
+          <div className="text-xl font-bold text-yellow-600 mb-1">SHELL</div>
+          <div className="text-[10px] text-gray-500 opacity-0 group-hover:opacity-100 transition-opacity">Shell</div>
+        </div>
+      </div>
+
+      {/* TotalEnergies - TTE */}
+      <div className="group h-16 md:h-20 bg-white rounded-xl border border-gray-100 flex items-center justify-center shadow-sm hover:shadow-md transition-all duration-300 p-3">
+        <div className="text-center">
+          <div className="text-xl font-bold text-blue-600 mb-1">TTE</div>
+          <div className="text-[10px] text-gray-500 opacity-0 group-hover:opacity-100 transition-opacity">TotalEnergies</div>
+        </div>
+      </div>
+
+      {/* PDVSA - PDVSA */}
+      <div className="group h-16 md:h-20 bg-white rounded-xl border border-gray-100 flex items-center justify-center shadow-sm hover:shadow-md transition-all duration-300 p-3">
+        <div className="text-center">
+          <div className="text-xl font-bold text-red-700 mb-1">PDVSA</div>
+          <div className="text-[10px] text-gray-500 opacity-0 group-hover:opacity-100 transition-opacity">PDVSA</div>
+        </div>
+      </div>
+
+      {/* BP - BP */}
+      <div className="group h-16 md:h-20 bg-white rounded-xl border border-gray-100 flex items-center justify-center shadow-sm hover:shadow-md transition-all duration-300 p-3">
+        <div className="text-center">
+          <div className="text-xl font-bold text-green-700 mb-1">BP</div>
+          <div className="text-[10px] text-gray-500 opacity-0 group-hover:opacity-100 transition-opacity">BP</div>
+        </div>
+      </div>
+
+      {/* ConocoPhillips - COP */}
+      <div className="group h-16 md:h-20 bg-white rounded-xl border border-gray-100 flex items-center justify-center shadow-sm hover:shadow-md transition-all duration-300 p-3">
+        <div className="text-center">
+          <div className="text-xl font-bold text-orange-600 mb-1">COP</div>
+          <div className="text-[10px] text-gray-500 opacity-0 group-hover:opacity-100 transition-opacity">ConocoPhillips</div>
+        </div>
+      </div>
+    </div>
+    
+    {/* Nota de discreción */}
+    <div className="mt-12 text-center">
+      <p className="text-sm text-gray-500 italic">
+        Nuestras alianzas estratégicas nos permiten conectar talento especializado 
+        con las principales empresas de la industria energética mundial
+      </p>
+    </div>
+  </div>
+</section>
 
       {/* ================= FORM SECTION ================= */}
       <section ref={formRef} className="py-20 md:py-32 px-6 bg-gradient-to-br from-gray-900 to-gray-950">
@@ -1034,7 +1127,7 @@ export default function LandingPageExecutive() {
         <div className="text-xs text-gray-400 mt-1">Licenciada en Administración de Recursos Humanos</div>
         <div className="flex items-center gap-2 mt-1">
           <Phone size={12} className="text-gray-400" />
-          <span className="text-xs text-gray-400">+54 1155048485</span>
+          
         </div>
         <div className="flex items-center gap-2 mt-1">
           <Mail size={12} className="text-gray-400" />
@@ -1056,7 +1149,7 @@ export default function LandingPageExecutive() {
                     <div className="text-xs text-gray-400 mt-1">Ingeniero de Sistemas</div>
                     <div className="flex items-center gap-2 mt-1">
                       <Phone size={12} className="text-gray-400" />
-                      <span className="text-xs text-gray-400">+54 1159121384</span>
+                      
                     </div>
                     <div className="flex items-center gap-2 mt-1">
                       <Mail size={12} className="text-gray-400" />
@@ -1076,6 +1169,41 @@ export default function LandingPageExecutive() {
                 
               </ul>
             </div>
+
+             {/* Información de Alex */}
+    <li className="flex items-start gap-2">
+      <div className="w-8 h-8 rounded-full bg-blue-500/20 flex items-center justify-center flex-shrink-0">
+        <svg className="w-4 h-4 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
+        </svg>
+      </div>
+                  <div>
+                    <div className="font-medium text-white">Lic. Mabel Rodriguez</div>
+                    <div className="text-sm text-blue-300">Director Tecnológico & Validador de Información</div>
+                    <div className="text-xs text-gray-400 mt-1">Ingeniero de Sistemas</div>
+                    <div className="flex items-center gap-2 mt-1">
+                      <Phone size={12} className="text-gray-400" />
+                      
+                    </div>
+                    <div className="flex items-center gap-2 mt-1">
+                      <Mail size={12} className="text-gray-400" />
+                      <span className="text-xs text-gray-400">serranolash@gmail.com</span>
+                    </div>
+                  </div>
+                </li>
+                
+                {/* Ubicaciones */}
+                <li className="flex items-center gap-2 pt-4 border-t border-gray-800">
+                  <MapPin size={16} className="text-gray-400" />
+                  <div>
+                    <span className="text-sm text-gray-300">Oficinas Operativas:</span>
+                    <div className="text-xs text-gray-400">Buenos Aires • Caracas • Miami</div>
+                  </div>
+                </li>
+                
+              </ul>
+            </div>
+            
                         
             <div>
               <h4 className="text-white font-semibold mb-6">Legal</h4>
