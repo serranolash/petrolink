@@ -447,12 +447,11 @@ export default function LandingPageExecutive() {
         {/* CONTENEDOR PRINCIPAL */}
         <div className="relative rounded-2xl shadow-2xl overflow-hidden border border-amber-200 bg-white">
           {/* FONDO DE REFINERÍA - CON TU IMAGEN */}
+          {/* FONDO DE REFINERÍA - CON TU IMAGEN LOCAL */}
           <div 
-            className="absolute inset-0 bg-cover bg-center opacity-30"
+            className="absolute inset-0 bg-cover bg-center opacity-25"
             style={{
-              backgroundImage: 'url("https://i.ibb.co/5hk0Qhsn/Gemini-Generated-Image-vn5w0bvn5w0bvn5w.png")',
-              backgroundSize: 'cover',
-              backgroundPosition: 'center',
+              backgroundImage: 'url("/refineria-bg.png")',
               filter: 'grayscale(30%) brightness(1.1)'
             }}
           ></div>
