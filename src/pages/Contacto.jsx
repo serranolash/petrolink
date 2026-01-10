@@ -302,15 +302,23 @@ export default function Contacto() {
                     <div className="flex items-center gap-3">
                       <Mail size={18} className="text-gray-400" />
                       <div>
-                        <div className="text-gray-400 text-sm">Correo personal</div>
-                        <a href="mailto:marielvismalave@gmail.com" 
+                        <div className="text-gray-400 text-sm">Correo profesional</div>
+                        <a href="mailto:marielvis.malave@petrolinkvzla.com" 
                            className="text-white hover:text-amber-300 transition font-medium">
                           marielvis.malave@petrolinkvzla.com
                         </a>
                       </div>
                     </div>
                     
-                    
+                    <div className="flex items-center gap-3">
+                      <Phone size={18} className="text-gray-400" />
+                      <div>
+                        <div className="text-gray-400 text-sm">Teléfono directo</div>
+                        <div className="text-white font-medium">Disponible por correo</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
                 
                 {/* Horario */}
                 <div className="flex items-center gap-4 p-4 bg-amber-900/20 rounded-xl border border-amber-800/30">
