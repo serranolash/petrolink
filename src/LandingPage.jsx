@@ -343,264 +343,282 @@ export default function LandingPageExecutive() {
           </div>
         )}
       </nav>
+{/* ================= HERO SECTION ================= */}
+<header className="relative min-h-screen flex items-center px-6 pt-20 overflow-hidden">
+  {/* Background Elements - Tema petrolero */}
+  <div className="absolute inset-0 -z-10">
+    <div className="absolute top-1/4 -left-32 w-[600px] h-[600px] bg-amber-500/10 rounded-full blur-[100px]"></div>
+    <div className="absolute bottom-1/4 -right-32 w-[500px] h-[500px] bg-orange-500/10 rounded-full blur-[100px]"></div>
+    <div className="absolute inset-0 bg-[radial-gradient(circle_at_1px_1px,rgba(251,191,36,0.05)_1px,transparent_0)] bg-[size:40px_40px]"></div>
+  </div>
 
-      {/* ================= HERO SECTION ================= */}
-      <header className="relative min-h-screen flex items-center px-6 pt-20 overflow-hidden">
-        {/* Background Elements - Tema petrolero */}
-        <div className="absolute inset-0 -z-10">
-          <div className="absolute top-1/4 -left-32 w-[600px] h-[600px] bg-amber-500/10 rounded-full blur-[100px]"></div>
-          <div className="absolute bottom-1/4 -right-32 w-[500px] h-[500px] bg-orange-500/10 rounded-full blur-[100px]"></div>
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_1px_1px,rgba(251,191,36,0.05)_1px,transparent_0)] bg-[size:40px_40px]"></div>
+  <div className="max-w-7xl mx-auto w-full">
+    <div className="grid lg:grid-cols-2 gap-16 items-center">
+      {/* Left Column - Content */}
+      <div className="relative">
+        <div className="absolute -top-6 -left-6 w-12 h-12 bg-gradient-to-br from-amber-500 to-orange-600 rounded-xl rotate-12 opacity-20"></div>
+        
+        <div className="inline-flex items-center gap-3 px-4 py-2 mb-8 rounded-full bg-gradient-to-r from-amber-50 to-orange-50 border border-amber-100">
+          <Flag className="text-amber-600" size={16} />
+          <span className="text-sm font-semibold text-amber-700">INICIATIVA NACIONAL 2026</span>
         </div>
 
-        <div className="max-w-7xl mx-auto w-full">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            {/* Left Column - Content */}
-            <div className="relative">
-              <div className="absolute -top-6 -left-6 w-12 h-12 bg-gradient-to-br from-amber-500 to-orange-600 rounded-xl rotate-12 opacity-20"></div>
-              
-              <div className="inline-flex items-center gap-3 px-4 py-2 mb-8 rounded-full bg-gradient-to-r from-amber-50 to-orange-50 border border-amber-100">
-                <Flag className="text-amber-600" size={16} />
-                <span className="text-sm font-semibold text-amber-700">INICIATIVA NACIONAL 2026</span>
-              </div>
+        <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight tracking-tight">
+          <span className="text-gray-900">Venezuela te necesita</span>
+          <br />
+          <span className="bg-gradient-to-r from-amber-600 via-orange-600 to-amber-700 bg-clip-text text-transparent">
+            de vuelta
+          </span>
+        </h1>
 
-              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight tracking-tight">
-                <span className="text-gray-900">Venezuela te necesita</span>
-                <br />
-                <span className="bg-gradient-to-r from-amber-600 via-orange-600 to-amber-700 bg-clip-text text-transparent">
-                  de vuelta
-                </span>
-              </h1>
+        <p className="mt-8 text-xl text-gray-600 leading-relaxed max-w-2xl">
+          <span className="font-bold text-gray-900">La industria petrolera te espera.</span> El mayor proceso de reconstrucción energética del siglo ha comenzado. Conecta con las transnacionales que lideran la apertura y asegura tu posición con salarios competitivos globales, sin salir de tu país.
+        </p>
 
-              <p className="mt-8 text-xl text-gray-600 leading-relaxed max-w-2xl">
-                <span className="font-bold text-gray-900">La industria petrolera te espera.</span> El mayor proceso de reconstrucción energética del siglo ha comenzado. Conecta con las transnacionales que lideran la apertura y asegura tu posición con salarios competitivos globales, sin salir de tu país.
-              </p>
+        <div className="mt-12 space-y-6">
+          <div className="flex items-start gap-4 bg-amber-50 rounded-xl p-4 border border-amber-100">
+            <CheckCircle className="text-amber-600 mt-1" size={20} />
+            <div>
+              <h4 className="font-bold text-gray-900 mb-1">¿Cansado de la sub-empleabilidad?</h4>
+              <p className="text-gray-700">Deja de trabajar en sectores ajenos a tu formación. Es hora de volver al campo, al pozo y a la gerencia.</p>
+            </div>
+          </div>
 
-              <div className="mt-12 space-y-6">
-                <div className="flex items-start gap-4 bg-amber-50 rounded-xl p-4 border border-amber-100">
-                  <CheckCircle className="text-amber-600 mt-1" size={20} />
-                  <div>
-                    <h4 className="font-bold text-gray-900 mb-1">¿Cansado de la sub-empleabilidad?</h4>
-                    <p className="text-gray-700">Deja de trabajar en sectores ajenos a tu formación. Es hora de volver al campo, al pozo y a la gerencia.</p>
+          <div className="flex items-start gap-4 bg-amber-50 rounded-xl p-4 border border-amber-100">
+            <ShieldCheck className="text-green-600 mt-1" size={20} />
+            <div>
+              <h4 className="font-bold text-gray-900 mb-1">Seguridad y Confianza</h4>
+              <p className="text-gray-700">Solo trabajamos con empresas que garantizan contratos en USD, seguridad jurídica y beneficios de clase mundial.</p>
+            </div>
+          </div>
+
+          <div className="flex items-start gap-4 bg-amber-50 rounded-xl p-4 border border-amber-100">
+            <Target className="text-orange-600 mt-1" size={20} />
+            <div>
+              <h4 className="font-bold text-gray-900 mb-1">Impacto Real</h4>
+              <p className="text-gray-700">Sé parte de la generación que reactivó la producción nacional.</p>
+            </div>
+          </div>
+        </div>
+
+        <div className="mt-12 flex flex-wrap items-center gap-6">
+          <button 
+            onClick={scrollToForm}
+            className="group px-10 py-4 rounded-xl bg-gradient-to-r from-amber-600 to-orange-600 text-white font-bold shadow-xl hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 flex items-center gap-3"
+          >
+            <span>Registrar mi Perfil de Especialista</span>
+            <ArrowRight size={20} className="group-hover:translate-x-2 transition-transform" />
+          </button>
+          
+          <div className="flex items-center gap-6">
+            <div className="flex items-center gap-2 text-gray-600">
+              <DollarSign className="text-green-600" size={18} />
+              <span className="text-sm font-medium">Contratos en USD</span>
+            </div>
+            <div className="flex items-center gap-2 text-gray-600">
+              <Home className="text-amber-600" size={18} />
+              <span className="text-sm font-medium">Sin salir del país</span>
+            </div>
+          </div>
+        </div>
+
+        {/* Stats */}
+        <div className="mt-16 grid grid-cols-3 gap-8 max-w-md">
+          <div className="text-center">
+            <div className="text-3xl font-bold text-gray-900">500+</div>
+            <div className="text-sm text-gray-500">Especialistas Colocados</div>
+          </div>
+          <div className="text-center">
+            <div className="text-3xl font-bold text-gray-900">15+</div>
+            <div className="text-sm text-gray-500">Transnacionales Aliadas</div>
+          </div>
+          <div className="text-center">
+            <div className="text-3xl font-bold text-gray-900">100%</div>
+            <div className="text-sm text-gray-500">Contratos en USD</div>
+          </div>
+        </div>
+      </div>
+
+      {/* Right Column - Visual Card CORREGIDO */}
+      <div className="relative">
+        {/* Elemento decorativo */}
+        <div className="absolute -top-6 -right-6 w-64 h-64 bg-gradient-to-br from-amber-500/20 to-orange-600/20 rounded-full blur-3xl"></div>
+        
+        {/* CONTENEDOR PRINCIPAL */}
+        <div className="relative rounded-2xl shadow-2xl overflow-hidden border border-amber-200 bg-white">
+          {/* FONDO DE REFINERÍA - CON TU IMAGEN */}
+          <div 
+            className="absolute inset-0 bg-cover bg-center opacity-30"
+            style={{
+              backgroundImage: 'url("https://i.ibb.co/5hk0Qhsn/Gemini-Generated-Image-vn5w0bvn5w0bvn5w.png")',
+              backgroundSize: 'cover',
+              backgroundPosition: 'center',
+              filter: 'grayscale(30%) brightness(1.1)'
+            }}
+          ></div>
+          
+          {/* Overlay para mejor legibilidad */}
+          <div className="absolute inset-0 bg-gradient-to-br from-white/70 via-white/60 to-amber-50/50"></div>
+          
+          {/* CONTENIDO */}
+          <div className="relative z-10 p-8">
+            {/* TÍTULO CORREGIDO - Ahora dentro del contenedor */}
+            <div className="inline-block px-6 py-3 mb-8 bg-gradient-to-r from-amber-600 to-orange-600 rounded-lg text-white font-bold shadow-lg">
+              Perfiles Buscados
+            </div>
+            
+            {/* Contenedor principal con scroll máximo */}
+            <div className="max-h-[500px] overflow-y-auto pr-2 custom-scrollbar">
+              <div className="space-y-4">
+                {/* Grupo 1: Ingeniería y Operaciones Petroleras */}
+                <div className="mb-2">
+                  <div className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-3 pl-2">
+                    🛢️ Ingeniería & Operaciones
+                  </div>
+                  <div className="space-y-3">
+                    <ProfileItem 
+                      icon={<HardHat className="text-amber-600" />}
+                      title="Ingenieros de Perforación"
+                      subtitle="Onshore & Offshore • IADC/IWCF"
+                    />
+                    <ProfileItem 
+                      icon={<Wrench className="text-orange-600" />}
+                      title="Supervisores de Mantenimiento"
+                      subtitle="Refinerías • Plantas • Rotating Equipment"
+                    />
+                    <ProfileItem 
+                      icon={<Activity className="text-amber-600" />}
+                      title="Gerentes de Producción"
+                      subtitle="Optimización de Pozos • ESP • Gas Lift"
+                    />
+                    <ProfileItem 
+                      icon={<BarChart className="text-orange-600" />}
+                      title="Analistas de Reservorios"
+                      subtitle="Geociencias • Evaluación • Simulación"
+                    />
                   </div>
                 </div>
 
-                <div className="flex items-start gap-4 bg-amber-50 rounded-xl p-4 border border-amber-100">
-                  <ShieldCheck className="text-green-600 mt-1" size={20} />
-                  <div>
-                    <h4 className="font-bold text-gray-900 mb-1">Seguridad y Confianza</h4>
-                    <p className="text-gray-700">Solo trabajamos con empresas que garantizan contratos en USD, seguridad jurídica y beneficios de clase mundial.</p>
+                {/* Grupo 2: IT & Tecnología Petrolera */}
+                <div className="mb-2">
+                  <div className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-3 pl-2">
+                    💻 IT & Digitalización Oil & Gas
+                  </div>
+                  <div className="space-y-3">
+                    <ProfileItem 
+                      icon={<svg className="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" />
+                      </svg>}
+                      title="Especialistas SCADA/DCS"
+                      subtitle="Automación • Control de Procesos • PLC"
+                    />
+                    <ProfileItem 
+                      icon={<svg className="w-5 h-5 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                      </svg>}
+                      title="Arquitectos de Datos Petroleros"
+                      subtitle="Data Lakes • ETL • PI System • OSIsoft"
+                    />
+                    <ProfileItem 
+                      icon={<svg className="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                      </svg>}
+                      title="Ciberseguridad Industrial"
+                      subtitle="OT Security • ISA/IEC 62443 • Redes Seguras"
+                    />
+                    <ProfileItem 
+                      icon={<svg className="w-5 h-5 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+                      </svg>}
+                      title="Desarrolladores Software Oil & Gas"
+                      subtitle="Petroleum Apps • GIS • Simuladores • Python/Java"
+                    />
                   </div>
                 </div>
 
-                <div className="flex items-start gap-4 bg-amber-50 rounded-xl p-4 border border-amber-100">
-                  <Target className="text-orange-600 mt-1" size={20} />
-                  <div>
-                    <h4 className="font-bold text-gray-900 mb-1">Impacto Real</h4>
-                    <p className="text-gray-700">Sé parte de la generación que reactivó la producción nacional.</p>
+                {/* Grupo 3: Seguridad y Proyectos */}
+                <div className="mb-2">
+                  <div className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-3 pl-2">
+                    🏗️ Seguridad & Proyectos
+                  </div>
+                  <div className="space-y-3">
+                    <ProfileItem 
+                      icon={<ShieldCheck className="text-amber-600" />}
+                      title="Especialistas HSE"
+                      subtitle="NEBOSH • OSHA • ISO 45001 • Seguridad Procesos"
+                    />
+                    <ProfileItem 
+                      icon={<Building2 className="text-orange-600" />}
+                      title="Coordinadores de Proyectos"
+                      subtitle="E&C • EPC • PMP • Gestión Contractual"
+                    />
+                    <ProfileItem 
+                      icon={<svg className="w-5 h-5 text-teal-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                      </svg>}
+                      title="Auditores de Sistemas Integrales"
+                      subtitle="ISO 9001/14001/45001 • API Q1/Q2"
+                    />
                   </div>
                 </div>
-              </div>
 
-              <div className="mt-12 flex flex-wrap items-center gap-6">
-                <button 
-                  onClick={scrollToForm}
-                  className="group px-10 py-4 rounded-xl bg-gradient-to-r from-amber-600 to-orange-600 text-white font-bold shadow-xl hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 flex items-center gap-3"
-                >
-                  <span>Registrar mi Perfil de Especialista</span>
-                  <ArrowRight size={20} className="group-hover:translate-x-2 transition-transform" />
-                </button>
-                
-                <div className="flex items-center gap-6">
-                  <div className="flex items-center gap-2 text-gray-600">
-                    <DollarSign className="text-green-600" size={18} />
-                    <span className="text-sm font-medium">Contratos en USD</span>
+                {/* Grupo 4: Nuevas Tecnologías y Energías */}
+                <div className="mb-2">
+                  <div className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-3 pl-2">
+                    🔋 Innovación & Energías Alternativas
                   </div>
-                  <div className="flex items-center gap-2 text-gray-600">
-                    <Home className="text-amber-600" size={18} />
-                    <span className="text-sm font-medium">Sin salir del país</span>
+                  <div className="space-y-3">
+                    <ProfileItem 
+                      icon={<svg className="w-5 h-5 text-cyan-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                      </svg>}
+                      title="Especialistas en Digital Twins"
+                      subtitle="Gemelos Digitales • IoT • Predictive Maintenance"
+                    />
+                    <ProfileItem 
+                      icon={<svg className="w-5 h-5 text-lime-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                      </svg>}
+                      title="Expertos en Transformación Digital"
+                      subtitle="Industry 4.0 • AI/ML aplicado a Oil & Gas"
+                    />
+                    <ProfileItem 
+                      icon={<svg className="w-5 h-5 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" />
+                      </svg>}
+                      title="Especialistas en Energías Renovables"
+                      subtitle="Solar/Hydrogen para Oil & Gas • Transición Energética"
+                    />
                   </div>
-                </div>
-              </div>
-
-              {/* Stats */}
-              <div className="mt-16 grid grid-cols-3 gap-8 max-w-md">
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-gray-900">500+</div>
-                  <div className="text-sm text-gray-500">Especialistas Colocados</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-gray-900">15+</div>
-                  <div className="text-sm text-gray-500">Transnacionales Aliadas</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-gray-900">100%</div>
-                  <div className="text-sm text-gray-500">Contratos en USD</div>
                 </div>
               </div>
             </div>
 
-            {/* Right Column - Visual Card */}
-<div className="relative">
-  <div className="absolute -top-6 -right-6 w-64 h-64 bg-gradient-to-br from-amber-500/20 to-orange-600/20 rounded-full blur-3xl"></div>
-  
-  <div className="relative bg-white rounded-2xl shadow-2xl p-8 border border-gray-100">
-    <div className="absolute -top-4 left-8 px-4 py-2 bg-gradient-to-r from-amber-600 to-orange-600 rounded-lg text-white font-bold">
-      Perfiles Buscados
-    </div>
-    
-    {/* Contenedor principal con scroll máximo */}
-    <div className="mt-10 max-h-[500px] overflow-y-auto pr-2 custom-scrollbar">
-      <div className="space-y-4">
-        {/* Grupo 1: Ingeniería y Operaciones Petroleras */}
-        <div className="mb-2">
-          <div className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-3 pl-2">
-            🛢️ Ingeniería & Operaciones
+            {/* Sección de proceso */}
+            <div className="mt-8 pt-8 border-t border-amber-100">
+              <div className="flex items-center justify-between">
+                <div className="text-sm text-gray-500">Evaluación inicial</div>
+                <div className="flex items-center gap-2">
+                  <Clock size={16} className="text-gray-400" />
+                  <span className="font-semibold">72 horas</span>
+                </div>
+              </div>
+              <div className="mt-2 flex items-center justify-between">
+                <div className="text-sm text-gray-500">Proceso completo</div>
+                <div className="flex items-center gap-2">
+                  <svg className="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                  </svg>
+                  <span className="font-semibold">Garantizado</span>
+                </div>
+              </div>
+            </div>
           </div>
-          <div className="space-y-3">
-            <ProfileItem 
-              icon={<HardHat className="text-amber-600" />}
-              title="Ingenieros de Perforación"
-              subtitle="Onshore & Offshore • IADC/IWCF"
-            />
-            <ProfileItem 
-              icon={<Wrench className="text-orange-600" />}
-              title="Supervisores de Mantenimiento"
-              subtitle="Refinerías • Plantas • Rotating Equipment"
-            />
-            <ProfileItem 
-              icon={<Activity className="text-amber-600" />}
-              title="Gerentes de Producción"
-              subtitle="Optimización de Pozos • ESP • Gas Lift"
-            />
-            <ProfileItem 
-              icon={<BarChart className="text-orange-600" />}
-              title="Analistas de Reservorios"
-              subtitle="Geociencias • Evaluación • Simulación"
-            />
-          </div>
-        </div>
-
-        {/* Grupo 2: IT & Tecnología Petrolera */}
-        <div className="mb-2">
-          <div className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-3 pl-2">
-            💻 IT & Digitalización Oil & Gas
-          </div>
-          <div className="space-y-3">
-            <ProfileItem 
-              icon={<svg className="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" />
-                    </svg>}
-              title="Especialistas SCADA/DCS"
-              subtitle="Automación • Control de Procesos • PLC"
-            />
-            <ProfileItem 
-              icon={<svg className="w-5 h-5 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
-                    </svg>}
-              title="Arquitectos de Datos Petroleros"
-              subtitle="Data Lakes • ETL • PI System • OSIsoft"
-            />
-            <ProfileItem 
-              icon={<svg className="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-                    </svg>}
-              title="Ciberseguridad Industrial"
-              subtitle="OT Security • ISA/IEC 62443 • Redes Seguras"
-            />
-            <ProfileItem 
-              icon={<svg className="w-5 h-5 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
-                    </svg>}
-              title="Desarrolladores Software Oil & Gas"
-              subtitle="Petroleum Apps • GIS • Simuladores • Python/Java"
-            />
-          </div>
-        </div>
-
-        {/* Grupo 3: Seguridad y Proyectos */}
-        <div className="mb-2">
-          <div className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-3 pl-2">
-            🏗️ Seguridad & Proyectos
-          </div>
-          <div className="space-y-3">
-            <ProfileItem 
-              icon={<ShieldCheck className="text-amber-600" />}
-              title="Especialistas HSE"
-              subtitle="NEBOSH • OSHA • ISO 45001 • Seguridad Procesos"
-            />
-            <ProfileItem 
-              icon={<Building2 className="text-orange-600" />}
-              title="Coordinadores de Proyectos"
-              subtitle="E&C • EPC • PMP • Gestión Contractual"
-            />
-            <ProfileItem 
-              icon={<svg className="w-5 h-5 text-teal-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
-                    </svg>}
-              title="Auditores de Sistemas Integrales"
-              subtitle="ISO 9001/14001/45001 • API Q1/Q2"
-            />
-          </div>
-        </div>
-
-        {/* Grupo 4: Nuevas Tecnologías y Energías */}
-        <div className="mb-2">
-          <div className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-3 pl-2">
-            🔋 Innovación & Energías Alternativas
-          </div>
-          <div className="space-y-3">
-            <ProfileItem 
-              icon={<svg className="w-5 h-5 text-cyan-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
-                    </svg>}
-              title="Especialistas en Digital Twins"
-              subtitle="Gemelos Digitales • IoT • Predictive Maintenance"
-            />
-            <ProfileItem 
-              icon={<svg className="w-5 h-5 text-lime-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
-                    </svg>}
-              title="Expertos en Transformación Digital"
-              subtitle="Industry 4.0 • AI/ML aplicado a Oil & Gas"
-            />
-            <ProfileItem 
-              icon={<svg className="w-5 h-5 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" />
-                    </svg>}
-              title="Especialistas en Energías Renovables"
-              subtitle="Solar/Hydrogen para Oil & Gas • Transición Energética"
-            />
-          </div>
-        </div>
-      </div>
-    </div>
-
-    {/* Sección de proceso - FUERA del scroll */}
-    <div className="mt-8 pt-8 border-t border-gray-100">
-      <div className="flex items-center justify-between">
-        <div className="text-sm text-gray-500">Evaluación inicial</div>
-        <div className="flex items-center gap-2">
-          <Clock size={16} className="text-gray-400" />
-          <span className="font-semibold">72 horas</span>
-        </div>
-      </div>
-      <div className="mt-2 flex items-center justify-between">
-        <div className="text-sm text-gray-500">Proceso completo</div>
-        <div className="flex items-center gap-2">
-          <svg className="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-          </svg>
-          <span className="font-semibold">Garantizado</span>
         </div>
       </div>
     </div>
   </div>
-</div>
-          </div>
-        </div>
-      </header>
-
+</header>
       {/* ================= FEATURES SECTION ================= */}
       <section id="features" className="py-20 md:py-32 px-6 bg-gradient-to-b from-white to-amber-50/30">
         <div className="max-w-7xl mx-auto">
