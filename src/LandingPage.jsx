@@ -646,7 +646,9 @@ export default function LandingPageExecutive() {
           </div>
         </div>
       </section>
-{/* ================= COMPANIES SECTION ================= */}
+      
+
+      {/* ================= COMPANIES SECTION (Versión con iconos) ================= */}
 <section id="companies" className="py-16 md:py-24 px-6 bg-gradient-to-b from-white to-amber-50/20">
   <div className="max-w-7xl mx-auto">
     <div className="text-center mb-12 md:mb-16">
@@ -654,112 +656,73 @@ export default function LandingPageExecutive() {
       <p className="text-gray-600">Conectamos talento venezolano con los líderes de la industria petrolera global</p>
     </div>
     
-    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 md:gap-8">
-      {/* Schlumberger - SLB */}
-      <div className="group h-20 md:h-24 bg-white rounded-xl border border-gray-100 flex items-center justify-center shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1 p-4">
-        <div className="text-center">
-          <div className="text-2xl md:text-3xl font-bold text-blue-600 mb-1">SLB</div>
-          <div className="text-xs text-gray-500 opacity-0 group-hover:opacity-100 transition-opacity">Schlumberger</div>
+    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 md:gap-8">
+      {/* Schlumberger */}
+      <div className="group relative h-28 bg-gradient-to-br from-white to-blue-50 rounded-xl border border-blue-100 flex flex-col items-center justify-center shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-2 p-4">
+        <div className="w-16 h-16 mb-3 flex items-center justify-center">
+          <div className="text-3xl font-bold text-blue-700">SLB</div>
+        </div>
+        <div className="absolute bottom-2 text-xs text-gray-600 opacity-0 group-hover:opacity-100 transition-opacity">
+          Schlumberger
         </div>
       </div>
 
-      {/* Halliburton - H */}
-      <div className="group h-20 md:h-24 bg-white rounded-xl border border-gray-100 flex items-center justify-center shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1 p-4">
-        <div className="text-center">
-          <div className="text-2xl md:text-3xl font-bold text-red-600 mb-1">H</div>
-          <div className="text-xs text-gray-500 opacity-0 group-hover:opacity-100 transition-opacity">Halliburton</div>
+      {/* Halliburton */}
+      <div className="group relative h-28 bg-gradient-to-br from-white to-red-50 rounded-xl border border-red-100 flex flex-col items-center justify-center shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-2 p-4">
+        <div className="w-16 h-16 mb-3 flex items-center justify-center">
+          <div className="text-4xl font-bold text-red-600">H</div>
+        </div>
+        <div className="absolute bottom-2 text-xs text-gray-600 opacity-0 group-hover:opacity-100 transition-opacity">
+          Halliburton
         </div>
       </div>
 
-      {/* Baker Hughes - BKR */}
-      <div className="group h-20 md:h-24 bg-white rounded-xl border border-gray-100 flex items-center justify-center shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1 p-4">
-        <div className="text-center">
-          <div className="text-2xl md:text-3xl font-bold text-black mb-1">BKR</div>
-          <div className="text-xs text-gray-500 opacity-0 group-hover:opacity-100 transition-opacity">Baker Hughes</div>
+      {/* Baker Hughes */}
+      <div className="group relative h-28 bg-gradient-to-br from-white to-gray-50 rounded-xl border border-gray-200 flex flex-col items-center justify-center shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-2 p-4">
+        <div className="w-16 h-16 mb-3 flex items-center justify-center">
+          <div className="text-2xl font-bold text-gray-900">BKR</div>
+        </div>
+        <div className="absolute bottom-2 text-xs text-gray-600 opacity-0 group-hover:opacity-100 transition-opacity">
+          Baker Hughes
         </div>
       </div>
 
-      {/* Chevron - CVX */}
-      <div className="group h-20 md:h-24 bg-white rounded-xl border border-gray-100 flex items-center justify-center shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1 p-4">
-        <div className="text-center">
-          <div className="text-2xl md:text-3xl font-bold text-blue-500 mb-1">CVX</div>
-          <div className="text-xs text-gray-500 opacity-0 group-hover:opacity-100 transition-opacity">Chevron</div>
+      {/* Chevron */}
+      <div className="group relative h-28 bg-gradient-to-br from-white to-blue-50 rounded-xl border border-blue-100 flex flex-col items-center justify-center shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-2 p-4">
+        <div className="w-16 h-16 mb-3 flex items-center justify-center">
+          <div className="text-3xl font-bold text-blue-600">CVX</div>
+        </div>
+        <div className="absolute bottom-2 text-xs text-gray-600 opacity-0 group-hover:opacity-100 transition-opacity">
+          Chevron
         </div>
       </div>
 
-      {/* Repsol - REP */}
-      <div className="group h-20 md:h-24 bg-white rounded-xl border border-gray-100 flex items-center justify-center shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1 p-4">
-        <div className="text-center">
-          <div className="text-2xl md:text-3xl font-bold text-green-600 mb-1">REP</div>
-          <div className="text-xs text-gray-500 opacity-0 group-hover:opacity-100 transition-opacity">Repsol</div>
+      {/* Repsol */}
+      <div className="group relative h-28 bg-gradient-to-br from-white to-green-50 rounded-xl border border-green-100 flex flex-col items-center justify-center shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-2 p-4">
+        <div className="w-16 h-16 mb-3 flex items-center justify-center">
+          <div className="text-3xl font-bold text-green-600">REP</div>
+        </div>
+        <div className="absolute bottom-2 text-xs text-gray-600 opacity-0 group-hover:opacity-100 transition-opacity">
+          Repsol
         </div>
       </div>
 
-      {/* Eni - ENI */}
-      <div className="group h-20 md:h-24 bg-white rounded-xl border border-gray-100 flex items-center justify-center shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1 p-4">
-        <div className="text-center">
-          <div className="text-2xl md:text-3xl font-bold text-purple-600 mb-1">ENI</div>
-          <div className="text-xs text-gray-500 opacity-0 group-hover:opacity-100 transition-opacity">Eni</div>
+      {/* Eni */}
+      <div className="group relative h-28 bg-gradient-to-br from-white to-purple-50 rounded-xl border border-purple-100 flex flex-col items-center justify-center shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-2 p-4">
+        <div className="w-16 h-16 mb-3 flex items-center justify-center">
+          <div className="text-3xl font-bold text-purple-600">ENI</div>
+        </div>
+        <div className="absolute bottom-2 text-xs text-gray-600 opacity-0 group-hover:opacity-100 transition-opacity">
+          Eni
         </div>
       </div>
     </div>
     
-    {/* Más compañías adicionales */}
-    <div className="mt-8 grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4 md:gap-6">
-      {/* ExxonMobil - XOM */}
-      <div className="group h-16 md:h-20 bg-white rounded-xl border border-gray-100 flex items-center justify-center shadow-sm hover:shadow-md transition-all duration-300 p-3">
-        <div className="text-center">
-          <div className="text-xl font-bold text-blue-800 mb-1">XOM</div>
-          <div className="text-[10px] text-gray-500 opacity-0 group-hover:opacity-100 transition-opacity">ExxonMobil</div>
-        </div>
-      </div>
-
-      {/* Shell - SHELL */}
-      <div className="group h-16 md:h-20 bg-white rounded-xl border border-gray-100 flex items-center justify-center shadow-sm hover:shadow-md transition-all duration-300 p-3">
-        <div className="text-center">
-          <div className="text-xl font-bold text-yellow-600 mb-1">SHELL</div>
-          <div className="text-[10px] text-gray-500 opacity-0 group-hover:opacity-100 transition-opacity">Shell</div>
-        </div>
-      </div>
-
-      {/* TotalEnergies - TTE */}
-      <div className="group h-16 md:h-20 bg-white rounded-xl border border-gray-100 flex items-center justify-center shadow-sm hover:shadow-md transition-all duration-300 p-3">
-        <div className="text-center">
-          <div className="text-xl font-bold text-blue-600 mb-1">TTE</div>
-          <div className="text-[10px] text-gray-500 opacity-0 group-hover:opacity-100 transition-opacity">TotalEnergies</div>
-        </div>
-      </div>
-
-      {/* PDVSA - PDVSA */}
-      <div className="group h-16 md:h-20 bg-white rounded-xl border border-gray-100 flex items-center justify-center shadow-sm hover:shadow-md transition-all duration-300 p-3">
-        <div className="text-center">
-          <div className="text-xl font-bold text-red-700 mb-1">PDVSA</div>
-          <div className="text-[10px] text-gray-500 opacity-0 group-hover:opacity-100 transition-opacity">PDVSA</div>
-        </div>
-      </div>
-
-      {/* BP - BP */}
-      <div className="group h-16 md:h-20 bg-white rounded-xl border border-gray-100 flex items-center justify-center shadow-sm hover:shadow-md transition-all duration-300 p-3">
-        <div className="text-center">
-          <div className="text-xl font-bold text-green-700 mb-1">BP</div>
-          <div className="text-[10px] text-gray-500 opacity-0 group-hover:opacity-100 transition-opacity">BP</div>
-        </div>
-      </div>
-
-      {/* ConocoPhillips - COP */}
-      <div className="group h-16 md:h-20 bg-white rounded-xl border border-gray-100 flex items-center justify-center shadow-sm hover:shadow-md transition-all duration-300 p-3">
-        <div className="text-center">
-          <div className="text-xl font-bold text-orange-600 mb-1">COP</div>
-          <div className="text-[10px] text-gray-500 opacity-0 group-hover:opacity-100 transition-opacity">ConocoPhillips</div>
-        </div>
-      </div>
-    </div>
-    
-    {/* Nota de discreción */}
-    <div className="mt-12 text-center">
-      <p className="text-sm text-gray-500 italic">
-        Nuestras alianzas estratégicas nos permiten conectar talento especializado 
-        con las principales empresas de la industria energética mundial
+    {/* Línea decorativa */}
+    <div className="mt-12 pt-8 border-t border-gray-200">
+      <p className="text-center text-gray-500 text-sm max-w-2xl mx-auto">
+        Trabajamos con las principales empresas de servicios petroleros y operadoras 
+        internacionales para posicionar el talento venezolano en proyectos energéticos globales
       </p>
     </div>
   </div>
