@@ -1,5 +1,6 @@
 // src/pages/Servicios.jsx
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Layout from '../components/Layout';
 import { Target, Users, BarChart3, TrendingUp, CheckCircle2, FileText, Shield, Home, Flag, Zap, HardHat, Wrench, Globe, Building2, Cpu, Network, ShieldCheck, Users as UsersIcon, Briefcase, Rocket, Lightbulb } from 'lucide-react';
 
@@ -265,20 +266,20 @@ export default function Servicios() {
             Agenda una consulta estratégica gratuita con nuestro equipo de especialistas en talento global.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a 
-              href="/contacto"
+            <Link 
+              to="/contacto"
               className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-white text-amber-900 font-bold rounded-xl hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
             >
               Solicitar Evaluación
               <TrendingUp size={20} />
-            </a>
-            <a 
-              href="/headhunting-ejecutivo"
+            </Link>
+            <Link 
+              to="/headhunting-ejecutivo"
               className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-transparent text-white font-bold rounded-xl border-2 border-white/30 hover:bg-white/10 transition-all duration-300"
             >
               Conocer Headhunting
               <Briefcase size={20} />
-            </a>
+            </Link>
           </div>
           <p className="text-amber-200 text-sm mt-8">
             Proceso 100% confidencial • Consultoría especializada • Respuesta en 48 horas
